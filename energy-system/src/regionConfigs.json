@@ -1,0 +1,4388 @@
+{
+  "globalConfig": {
+    "mapWidth": 2000,
+    "mapHeight": 1500,
+    "totalRegions": 55,
+    "bufferRegionStart": 53
+  },
+  "regionConfigs": {
+    "1": {
+      "id": 1,
+      "name": "区域-1",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 122,
+        "y": 139
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          10
+        ],
+        "powerLinks": [
+          2,
+          9,
+          10
+        ]
+      }
+    },
+    "2": {
+      "id": 2,
+      "name": "区域-2",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 331,
+        "y": 69
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          10
+        ],
+        "powerLinks": [
+          1,
+          3,
+          10
+        ]
+      }
+    },
+    "3": {
+      "id": 3,
+      "name": "区域-3",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 573,
+        "y": 79
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          10
+        ],
+        "powerLinks": [
+          2,
+          10
+        ]
+      }
+    },
+    "4": {
+      "id": 4,
+      "name": "区域-4",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 894,
+        "y": 71
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          12
+        ],
+        "powerLinks": [
+          5,
+          11,
+          12
+        ]
+      }
+    },
+    "5": {
+      "id": 5,
+      "name": "区域-5",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1067,
+        "y": 148
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          12
+        ],
+        "powerLinks": [
+          4,
+          12
+        ]
+      }
+    },
+    "6": {
+      "id": 6,
+      "name": "区域-6",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1410,
+        "y": 73
+      },
+      "costMultiplier": 0.9,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 8,
+          "Volatiles": 40,
+          "FixedCarbon": 30,
+          "Ash": 22
+        },
+        "elemental": {
+          "C": 60,
+          "H": 5,
+          "O": 20,
+          "N": 2,
+          "S": 1.5
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          14
+        ],
+        "powerLinks": [
+          7,
+          13,
+          14
+        ]
+      }
+    },
+    "7": {
+      "id": 7,
+      "name": "区域-7",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1671,
+        "y": 121
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          14
+        ],
+        "powerLinks": [
+          6,
+          14,
+          15
+        ]
+      }
+    },
+    "8": {
+      "id": 8,
+      "name": "区域-8",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1050,
+        "y": 1250
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          44
+        ],
+        "powerLinks": [
+          44,
+          45,
+          52
+        ]
+      }
+    },
+    "9": {
+      "id": 9,
+      "name": "区域-9",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 97,
+        "y": 338
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          10
+        ],
+        "powerLinks": [
+          1,
+          10
+        ]
+      }
+    },
+    "10": {
+      "id": 10,
+      "name": "区域-10",
+      "type": "工业区",
+      "enabled": true,
+      "position": {
+        "x": 350,
+        "y": 300
+      },
+      "costMultiplier": 0.9,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4,
+          "variance": 3,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 45000,
+          "nightBase": 65000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 60,
+          "harvestOutput": 60,
+          "harvestMonths": [],
+          "variance": 15
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 8,
+          "Volatiles": 40,
+          "FixedCarbon": 30,
+          "Ash": 22
+        },
+        "elemental": {
+          "C": 60,
+          "H": 5,
+          "O": 20,
+          "N": 2,
+          "S": 1.5
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          1,
+          2,
+          3,
+          9
+        ],
+        "powerLinks": [
+          1,
+          2,
+          3,
+          9
+        ]
+      }
+    },
+    "11": {
+      "id": 11,
+      "name": "区域-11",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 586,
+        "y": 301
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          12
+        ],
+        "powerLinks": [
+          4,
+          12,
+          20
+        ]
+      }
+    },
+    "12": {
+      "id": 12,
+      "name": "区域-12",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 874,
+        "y": 348
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          4,
+          5,
+          11,
+          20
+        ],
+        "powerLinks": [
+          4,
+          5,
+          11,
+          20
+        ]
+      }
+    },
+    "13": {
+      "id": 13,
+      "name": "区域-13",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1187,
+        "y": 336
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          14
+        ],
+        "powerLinks": [
+          6,
+          14,
+          22
+        ]
+      }
+    },
+    "14": {
+      "id": 14,
+      "name": "区域-14",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 1425,
+        "y": 291
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 5,
+        "powerCount": 5,
+        "biomassLinks": [
+          6,
+          7,
+          13,
+          15,
+          22
+        ],
+        "powerLinks": [
+          6,
+          7,
+          13,
+          15,
+          22
+        ]
+      }
+    },
+    "15": {
+      "id": 15,
+      "name": "区域-15",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1659,
+        "y": 309
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          14
+        ],
+        "powerLinks": [
+          7,
+          14,
+          22
+        ]
+      }
+    },
+    "16": {
+      "id": 16,
+      "name": "区域-16",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1855,
+        "y": 372
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          23
+        ],
+        "powerLinks": [
+          23,
+          24
+        ]
+      }
+    },
+    "17": {
+      "id": 17,
+      "name": "区域-17",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 176,
+        "y": 579
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          26
+        ],
+        "powerLinks": [
+          18,
+          25,
+          26
+        ]
+      }
+    },
+    "18": {
+      "id": 18,
+      "name": "区域-18",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 404,
+        "y": 547
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          26
+        ],
+        "powerLinks": [
+          17,
+          19,
+          26
+        ]
+      }
+    },
+    "19": {
+      "id": 19,
+      "name": "区域-19",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 573,
+        "y": 500
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          26
+        ],
+        "powerLinks": [
+          18,
+          26
+        ]
+      }
+    },
+    "20": {
+      "id": 20,
+      "name": "区域-20",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 833,
+        "y": 572
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          12
+        ],
+        "powerLinks": [
+          11,
+          12
+        ]
+      }
+    },
+    "21": {
+      "id": 21,
+      "name": "区域-21",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1050,
+        "y": 600
+      },
+      "costMultiplier": 0.9,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 8,
+          "Volatiles": 40,
+          "FixedCarbon": 30,
+          "Ash": 22
+        },
+        "elemental": {
+          "C": 60,
+          "H": 5,
+          "O": 20,
+          "N": 2,
+          "S": 1.5
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          28
+        ],
+        "powerLinks": [
+          28,
+          36
+        ]
+      }
+    },
+    "22": {
+      "id": 22,
+      "name": "区域-22",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1325,
+        "y": 582
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          14
+        ],
+        "powerLinks": [
+          13,
+          14,
+          15
+        ]
+      }
+    },
+    "23": {
+      "id": 23,
+      "name": "区域-23",
+      "type": "工业区",
+      "enabled": true,
+      "position": {
+        "x": 1656,
+        "y": 575
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4,
+          "variance": 3,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 45000,
+          "nightBase": 65000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 60,
+          "harvestOutput": 60,
+          "harvestMonths": [],
+          "variance": 15
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          16,
+          24,
+          31,
+          32
+        ],
+        "powerLinks": [
+          16,
+          24,
+          31,
+          32
+        ]
+      }
+    },
+    "24": {
+      "id": 24,
+      "name": "区域-24",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1924,
+        "y": 525
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          23
+        ],
+        "powerLinks": [
+          16,
+          23,
+          32
+        ]
+      }
+    },
+    "25": {
+      "id": 25,
+      "name": "区域-25",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 136,
+        "y": 735
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          26
+        ],
+        "powerLinks": [
+          17,
+          26
+        ]
+      }
+    },
+    "26": {
+      "id": 26,
+      "name": "区域-26",
+      "type": "工业区",
+      "enabled": true,
+      "position": {
+        "x": 363,
+        "y": 748
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4,
+          "variance": 3,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 45000,
+          "nightBase": 65000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 60,
+          "harvestOutput": 60,
+          "harvestMonths": [],
+          "variance": 15
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          17,
+          18,
+          19,
+          25
+        ],
+        "powerLinks": [
+          17,
+          18,
+          19,
+          25
+        ]
+      }
+    },
+    "27": {
+      "id": 27,
+      "name": "区域-27",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 605,
+        "y": 745
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          28
+        ],
+        "powerLinks": [
+          28,
+          35
+        ]
+      }
+    },
+    "28": {
+      "id": 28,
+      "name": "区域-28",
+      "type": "工业区",
+      "enabled": true,
+      "position": {
+        "x": 846,
+        "y": 752
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4,
+          "variance": 3,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 45000,
+          "nightBase": 65000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 60,
+          "harvestOutput": 60,
+          "harvestMonths": [],
+          "variance": 15
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          21,
+          27,
+          35,
+          36
+        ],
+        "powerLinks": [
+          21,
+          27,
+          35,
+          36
+        ]
+      }
+    },
+    "29": {
+      "id": 29,
+      "name": "区域-29",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1100,
+        "y": 750
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          37
+        ],
+        "powerLinks": [
+          30,
+          37
+        ]
+      }
+    },
+    "30": {
+      "id": 30,
+      "name": "区域-30",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1397,
+        "y": 796
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          37
+        ],
+        "powerLinks": [
+          29,
+          37,
+          38
+        ]
+      }
+    },
+    "31": {
+      "id": 31,
+      "name": "区域-31",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1660,
+        "y": 795
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          23
+        ],
+        "powerLinks": [
+          23,
+          32
+        ]
+      }
+    },
+    "32": {
+      "id": 32,
+      "name": "区域-32",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1868,
+        "y": 731
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          23
+        ],
+        "powerLinks": [
+          23,
+          24,
+          31
+        ]
+      }
+    },
+    "33": {
+      "id": 33,
+      "name": "区域-33",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 179,
+        "y": 996
+      },
+      "costMultiplier": 0.9,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 8,
+          "Volatiles": 40,
+          "FixedCarbon": 30,
+          "Ash": 22
+        },
+        "elemental": {
+          "C": 60,
+          "H": 5,
+          "O": 20,
+          "N": 2,
+          "S": 1.5
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          42
+        ],
+        "powerLinks": [
+          34,
+          41,
+          42
+        ]
+      }
+    },
+    "34": {
+      "id": 34,
+      "name": "区域-34",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 350,
+        "y": 950
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          42
+        ],
+        "powerLinks": [
+          33,
+          42
+        ]
+      }
+    },
+    "35": {
+      "id": 35,
+      "name": "区域-35",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 600,
+        "y": 950
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          28
+        ],
+        "powerLinks": [
+          27,
+          28,
+          36
+        ]
+      }
+    },
+    "36": {
+      "id": 36,
+      "name": "区域-36",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 889,
+        "y": 937
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          28
+        ],
+        "powerLinks": [
+          21,
+          28,
+          35
+        ]
+      }
+    },
+    "37": {
+      "id": 37,
+      "name": "区域-37",
+      "type": "工业区",
+      "enabled": true,
+      "position": {
+        "x": 1185,
+        "y": 913
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4,
+          "variance": 3,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 45000,
+          "nightBase": 65000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 60,
+          "harvestOutput": 60,
+          "harvestMonths": [],
+          "variance": 15
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 4,
+        "powerCount": 4,
+        "biomassLinks": [
+          29,
+          30,
+          38,
+          46
+        ],
+        "powerLinks": [
+          29,
+          30,
+          38,
+          46
+        ]
+      }
+    },
+    "38": {
+      "id": 38,
+      "name": "区域-38",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1391,
+        "y": 942
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          37
+        ],
+        "powerLinks": [
+          30,
+          37,
+          46
+        ]
+      }
+    },
+    "39": {
+      "id": 39,
+      "name": "区域-39",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 1657,
+        "y": 986
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 3,
+        "powerCount": 3,
+        "biomassLinks": [
+          40,
+          47,
+          48
+        ],
+        "powerLinks": [
+          40,
+          47,
+          48
+        ]
+      }
+    },
+    "40": {
+      "id": 40,
+      "name": "区域-40",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1902,
+        "y": 1016
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          39
+        ],
+        "powerLinks": [
+          39,
+          48
+        ]
+      }
+    },
+    "41": {
+      "id": 41,
+      "name": "区域-41",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 69,
+        "y": 1225
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          42
+        ],
+        "powerLinks": [
+          33,
+          42,
+          49
+        ]
+      }
+    },
+    "42": {
+      "id": 42,
+      "name": "区域-42",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 391,
+        "y": 1131
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 5,
+        "powerCount": 5,
+        "biomassLinks": [
+          33,
+          34,
+          41,
+          49,
+          50
+        ],
+        "powerLinks": [
+          33,
+          34,
+          41,
+          49,
+          50
+        ]
+      }
+    },
+    "43": {
+      "id": 43,
+      "name": "区域-43",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 594,
+        "y": 1146
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          44
+        ],
+        "powerLinks": [
+          44,
+          51
+        ]
+      }
+    },
+    "44": {
+      "id": 44,
+      "name": "区域-44",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 800,
+        "y": 1150
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 5,
+        "powerCount": 5,
+        "biomassLinks": [
+          8,
+          43,
+          45,
+          51,
+          52
+        ],
+        "powerLinks": [
+          8,
+          43,
+          45,
+          51,
+          52
+        ]
+      }
+    },
+    "45": {
+      "id": 45,
+      "name": "区域-45",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1030,
+        "y": 1100
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          44
+        ],
+        "powerLinks": [
+          8,
+          44
+        ]
+      }
+    },
+    "46": {
+      "id": 46,
+      "name": "区域-46",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1346,
+        "y": 1179
+      },
+      "costMultiplier": 0.9,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 8,
+          "Volatiles": 40,
+          "FixedCarbon": 30,
+          "Ash": 22
+        },
+        "elemental": {
+          "C": 60,
+          "H": 5,
+          "O": 20,
+          "N": 2,
+          "S": 1.5
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          37
+        ],
+        "powerLinks": [
+          37,
+          38
+        ]
+      }
+    },
+    "47": {
+      "id": 47,
+      "name": "区域-47",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1623,
+        "y": 1159
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          39
+        ],
+        "powerLinks": [
+          39,
+          48
+        ]
+      }
+    },
+    "48": {
+      "id": 48,
+      "name": "区域-48",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 1900,
+        "y": 1183
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          39
+        ],
+        "powerLinks": [
+          39,
+          40,
+          47
+        ]
+      }
+    },
+    "49": {
+      "id": 49,
+      "name": "区域-49",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 111,
+        "y": 1425
+      },
+      "costMultiplier": 1.5,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          42
+        ],
+        "powerLinks": [
+          41,
+          42,
+          50
+        ]
+      }
+    },
+    "50": {
+      "id": 50,
+      "name": "区域-50",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 374,
+        "y": 1399
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          42
+        ],
+        "powerLinks": [
+          42,
+          49
+        ]
+      }
+    },
+    "51": {
+      "id": 51,
+      "name": "区域-51",
+      "type": "林业区",
+      "enabled": true,
+      "position": {
+        "x": 650,
+        "y": 1391
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 2.5,
+          "variance": 2,
+          "dailyAmplitude": 1,
+          "bonus": -1
+        },
+        "solar": {
+          "baseIntensity": 0.4,
+          "seasonalAmplitude": 0.25,
+          "variance": 0.1,
+          "multiplier": 0.7
+        },
+        "load": {
+          "dayBase": 4000,
+          "nightBase": 2000,
+          "variance": 1500
+        },
+        "biomass": {
+          "baseOutput": 150,
+          "harvestOutput": 150,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 20,
+          "Volatiles": 65,
+          "FixedCarbon": 13,
+          "Ash": 2
+        },
+        "elemental": {
+          "C": 50,
+          "H": 6,
+          "O": 43,
+          "N": 0.5,
+          "S": 0.05
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          44
+        ],
+        "powerLinks": [
+          43,
+          44,
+          52
+        ]
+      }
+    },
+    "52": {
+      "id": 52,
+      "name": "区域-52",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 870,
+        "y": 1391
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 15,
+          "Volatiles": 60,
+          "FixedCarbon": 15,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 3,
+        "biomassLinks": [
+          44
+        ],
+        "powerLinks": [
+          8,
+          44,
+          51
+        ]
+      }
+    },
+    "53": {
+      "id": 53,
+      "name": "测试区-1",
+      "type": "居民区",
+      "enabled": true,
+      "position": {
+        "x": 1450,
+        "y": 1320
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 3.5,
+          "variance": 2.5,
+          "dailyAmplitude": 1.5,
+          "bonus": 0
+        },
+        "solar": {
+          "baseIntensity": 0.5,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1
+        },
+        "load": {
+          "dayBase": 35000,
+          "nightBase": 20000,
+          "variance": 8000
+        },
+        "biomass": {
+          "baseOutput": 80,
+          "harvestOutput": 80,
+          "harvestMonths": [],
+          "variance": 20
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 2,
+        "powerCount": 2,
+        "biomassLinks": [
+          54,
+          55
+        ],
+        "powerLinks": [
+          54,
+          55
+        ]
+      }
+    },
+    "54": {
+      "id": 54,
+      "name": "测试区-2",
+      "type": "山地区",
+      "enabled": true,
+      "position": {
+        "x": 1800,
+        "y": 1280
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 5.5,
+          "variance": 4,
+          "dailyAmplitude": 2.5,
+          "bonus": 2
+        },
+        "solar": {
+          "baseIntensity": 0.6,
+          "seasonalAmplitude": 0.35,
+          "variance": 0.2,
+          "multiplier": 1.2
+        },
+        "load": {
+          "dayBase": 8000,
+          "nightBase": 2000,
+          "variance": 3000
+        },
+        "biomass": {
+          "baseOutput": 30,
+          "harvestOutput": 30,
+          "harvestMonths": [],
+          "variance": 10
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          53
+        ],
+        "powerLinks": [
+          53,
+          55
+        ]
+      }
+    },
+    "55": {
+      "id": 55,
+      "name": "测试区-3",
+      "type": "农业区",
+      "enabled": true,
+      "position": {
+        "x": 1600,
+        "y": 1450
+      },
+      "costMultiplier": 1,
+      "resource": {
+        "wind": {
+          "baseSpeed": 4.5,
+          "variance": 3.5,
+          "dailyAmplitude": 2,
+          "bonus": 0.5
+        },
+        "solar": {
+          "baseIntensity": 0.55,
+          "seasonalAmplitude": 0.3,
+          "variance": 0.15,
+          "multiplier": 1.1
+        },
+        "load": {
+          "dayBase": 12000,
+          "nightBase": 8000,
+          "variance": 5000
+        },
+        "biomass": {
+          "baseOutput": 100,
+          "harvestOutput": 350,
+          "harvestMonths": [
+            8,
+            9,
+            10
+          ],
+          "variance": 30
+        }
+      },
+      "material": {
+        "proximate": {
+          "Moisture": 10,
+          "Volatiles": 60,
+          "FixedCarbon": 20,
+          "Ash": 10
+        },
+        "elemental": {
+          "C": 45,
+          "H": 6,
+          "O": 40,
+          "N": 1,
+          "S": 0.1
+        },
+        "variance": {
+          "proximate": {
+            "Moisture": 10,
+            "Volatiles": 10,
+            "FixedCarbon": 10,
+            "Ash": 5
+          },
+          "elemental": {
+            "C": 10,
+            "H": 2,
+            "O": 10,
+            "N": 1,
+            "S": 0.5
+          }
+        }
+      },
+      "connections": {
+        "biomassCount": 1,
+        "powerCount": 2,
+        "biomassLinks": [
+          53
+        ],
+        "powerLinks": [
+          53,
+          54
+        ]
+      }
+    }
+  }
+}

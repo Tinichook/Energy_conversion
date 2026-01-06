@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光伏组件功率曲线 - A4横向打印版</title>
+    <style>
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
+            background: white;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 277mm; /* A4横向宽度 */
+            height: 190mm; /* A4横向高度 */
+            margin: 0 auto;
+            background: white;
+            padding: 5mm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 3mm;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 3mm;
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .control-group label {
+            color: #333;
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        
+        .control-group input {
+            width: 80px;
+            padding: 5px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .chart-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+        
+        canvas {
+            display: block;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .print-btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">🖨️ 打印图表</button>
+    
+    <div class="container">
+        <h1>光伏组件功率-辐照度特性曲线</h1>
+        
+        <div class="controls no-print">
+            <div class="control-group">
+                <label>环境温度:</label>
+                <input type="number" id="temperature" value="25" min="-20" max="60" step="1">
+                <span>°C</span>
+            </div>
+            <div class="control-group">
+                <label>降额因子:</label>
+                <input type="number" id="derating" value="0.95" min="0.8" max="1.0" step="0.01">
+            </div>
+        </div>
+        
+        <div class="chart-wrapper">
+            <canvas id="powerChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // 光伏组件数据
+        const solarPanels = [
+            {
+                model: 'PV-410M',
+                power: 410,
+                tempCoeffPmax: -0.34,
+                color: '#E74C3C'
+            },
+            {
+                model: 'PV-430M',
+                power: 430,
+                tempCoeffPmax: -0.34,
+                color: '#3498DB'
+            },
+            {
+                model: 'PV-545N',
+                power: 545,
+                tempCoeffPmax: -0.30,
+                color: '#1ABC9C'
+            },
+            {
+                model: 'PV-550M',
+                power: 550,
+                tempCoeffPmax: -0.35,
+                color: '#9B59B6'
+            },
+            {
+                model: 'PV-660M',
+                power: 660,
+                tempCoeffPmax: -0.29,
+                color: '#F39C12'
+            },
+            {
+                model: 'PV-275P',
+                power: 275,
+                tempCoeffPmax: -0.40,
+                color: '#95A5A6'
+            }
+        ];
+
+        const canvas = document.getElementById('powerChart');
+        const ctx = canvas.getContext('2d');
+        
+        // 设置高分辨率画布 - 解决模糊问题
+        const dpr = window.devicePixelRatio || 2;
+        const displayWidth = 1000;  // 显示宽度
+        const displayHeight = 600;  // 显示高度
+        
+        canvas.width = displayWidth * dpr;
+        canvas.height = displayHeight * dpr;
+        canvas.style.width = displayWidth + 'px';
+        canvas.style.height = displayHeight + 'px';
+        
+        // 缩放上下文以匹配设备像素比
+        ctx.scale(dpr, dpr);
+        
+        // 图表边距
+        const margin = { top: 60, right: 50, bottom: 70, left: 80 };
+        const chartWidth = displayWidth - margin.left - margin.right;
+        const chartHeight = displayHeight - margin.top - margin.bottom;
+        
+        // 计算功率
+        function calculatePower(panel, irradiance, temperature, derating) {
+            const tempDiff = temperature - 25;
+            const tempCorrection = 1 + (panel.tempCoeffPmax / 100) * tempDiff;
+            const totalDerating = derating * tempCorrection;
+            const power = totalDerating * panel.power * (irradiance / 1000);
+            return Math.max(0, power);
+        }
+        
+        // 绘制图表
+        function drawChart() {
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const derating = parseFloat(document.getElementById('derating').value);
+            
+            // 清空画布
+            ctx.clearRect(0, 0, displayWidth, displayHeight);
+            
+            // 绘制白色背景
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, displayWidth, displayHeight);
+            
+            // 绘制标题
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = 'bold 20px Microsoft YaHei';
+            ctx.textAlign = 'center';
+            ctx.fillText('光伏组件功率-辐照度特性曲线', displayWidth / 2, 30);
+            
+            // 绘制坐标轴
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(margin.left, margin.top);
+            ctx.lineTo(margin.left, margin.top + chartHeight);
+            ctx.lineTo(margin.left + chartWidth, margin.top + chartHeight);
+            ctx.stroke();
+            
+            // X轴标签（辐照度）
+            ctx.fillStyle = '#333';
+            ctx.font = '15px Microsoft YaHei';
+            ctx.textAlign = 'center';
+            for (let i = 0; i <= 1200; i += 200) {
+                const x = margin.left + (i / 1200) * chartWidth;
+                const y = margin.top + chartHeight;
+                
+                // 刻度线
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x, y + 6);
+                ctx.stroke();
+                
+                // 标签
+                ctx.fillStyle = '#333';
+                ctx.fillText(i.toString(), x, y + 24);
+            }
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = 'bold 16px Microsoft YaHei';
+            ctx.fillText('辐照度 (W/m²)', displayWidth / 2, displayHeight - 15);
+            
+            // Y轴标签（功率）
+            const maxPower = 700;
+            ctx.textAlign = 'right';
+            ctx.font = '15px Microsoft YaHei';
+            for (let i = 0; i <= maxPower; i += 100) {
+                const x = margin.left;
+                const y = margin.top + chartHeight - (i / maxPower) * chartHeight;
+                
+                // 刻度线
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(x - 6, y);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                // 标签
+                ctx.fillStyle = '#333';
+                ctx.fillText(i.toString(), x - 12, y + 5);
+            }
+            
+            // Y轴标题
+            ctx.save();
+            ctx.translate(25, displayHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = 'bold 16px Microsoft YaHei';
+            ctx.textAlign = 'center';
+            ctx.fillText('输出功率 (W)', 0, 0);
+            ctx.restore();
+            
+            // 绘制曲线
+            solarPanels.forEach(panel => {
+                ctx.strokeStyle = panel.color;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                
+                let firstPoint = true;
+                for (let irradiance = 0; irradiance <= 1200; irradiance += 10) {
+                    const power = calculatePower(panel, irradiance, temperature, derating);
+                    const clampedPower = Math.min(power, maxPower);
+                    
+                    const x = margin.left + (irradiance / 1200) * chartWidth;
+                    const y = margin.top + chartHeight - (clampedPower / maxPower) * chartHeight;
+                    
+                    if (firstPoint) {
+                        ctx.moveTo(x, y);
+                        firstPoint = false;
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.stroke();
+            });
+            
+            // 绘制图例
+            drawLegend(temperature, derating);
+        }
+        
+        // 绘制图例（左上角，优化布局）
+        function drawLegend(temperature, derating) {
+            const legendX = margin.left + 25;
+            const legendY = margin.top + 15;
+            const legendWidth = 160; // 缩小宽度，因为只显示型号
+            const legendItemHeight = 28;
+            const legendPadding = 15;
+            
+            // 绘制图例背景
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.strokeStyle = '#bbb';
+            ctx.lineWidth = 1.5;
+            const legendHeight = solarPanels.length * legendItemHeight + legendPadding * 2;
+            ctx.fillRect(legendX, legendY, legendWidth, legendHeight);
+            ctx.strokeRect(legendX, legendY, legendWidth, legendHeight);
+            
+            // 绘制图例项
+            ctx.textAlign = 'left';
+            
+            solarPanels.forEach((panel, index) => {
+                // 使用中心对齐的Y坐标
+                const itemCenterY = legendY + legendPadding + index * legendItemHeight + legendItemHeight / 2;
+                
+                // 绘制颜色线（垂直居中）
+                ctx.strokeStyle = panel.color;
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(legendX + 12, itemCenterY);
+                ctx.lineTo(legendX + 40, itemCenterY);
+                ctx.stroke();
+                
+                // 只绘制型号名称（垂直居中）
+                ctx.fillStyle = '#2c3e50';
+                ctx.font = '15px Microsoft YaHei';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(panel.model, legendX + 48, itemCenterY);
+            });
+            
+            // 重置textBaseline
+            ctx.textBaseline = 'alphabetic';
+        }
+        
+        // 事件监听
+        document.getElementById('temperature').addEventListener('input', drawChart);
+        document.getElementById('derating').addEventListener('input', drawChart);
+        
+        // 初始化
+        drawChart();
+        
+        // 窗口大小改变时重绘
+        window.addEventListener('resize', drawChart);
+    </script>
+</body>
+</html>

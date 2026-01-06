@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风机功率曲线对比分析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+        .control-section {
+            margin-bottom: 15px;
+        }
+        .control-section h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+        .checkbox-item input {
+            margin-right: 8px;
+        }
+        button {
+            padding: 10px 30px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .chart-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .chart-box h3 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+        .daily-power-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .daily-power-section h3 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .daily-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .control-group label {
+            font-weight: bold;
+            color: #333;
+        }
+        .control-group select {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-unit {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌬️ 风机功率曲线对比分析</h1>
+        
+        <div class="controls">
+            <div class="control-section">
+                <h3>选择要对比的风机型号（静态曲线）：</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-3" checked> SWT-3kW
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-10" checked> SWT-10kW
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-50" checked> MWT-50kW
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-1500"> GW87/1500
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-2500" checked> GW121/2500
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-3000"> MySE3.0-135
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" class="static-turbine" value="WT-3600"> EN-141/3.6
+                    </label>
+                </div>
+            </div>
+            <button onclick="updateStaticCharts()">🔄 更新静态曲线</button>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>📈 风机静态功率曲线对比（P-V）</h3>
+                <canvas id="powerChart" width="700" height="500"></canvas>
+            </div>
+            
+            <div class="chart-box">
+                <h3>📊 风能利用系数曲线对比（Cp-V）</h3>
+                <canvas id="cpChart" width="700" height="500"></canvas>
+            </div>
+        </div>
+        
+        <div class="daily-power-section">
+            <h3>⚡ 某一天风机功率计算可视化（多风机对比）</h3>
+            <div class="controls">
+                <div class="control-section">
+                    <h3>选择要对比的风机型号（日功率）：</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-3"> SWT-3kW
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-10"> SWT-10kW
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-50"> MWT-50kW
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-1500"> GW87/1500
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-2500" checked> GW121/2500
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-3000"> MySE3.0-135
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="daily-turbine" value="WT-3600"> EN-141/3.6
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="daily-controls">
+                <div class="control-group">
+                    <label>选择日期：</label>
+                    <select id="dailyDateSelect">
+                        <option value="1">1月某日（冬季）</option>
+                        <option value="4">4月某日（春季）</option>
+                        <option value="7" selected>7月某日（夏季）</option>
+                        <option value="10">10月某日（秋季）</option>
+                    </select>
+                </div>
+                <button onclick="updateDailyPower()">🔄 更新日功率曲线</button>
+            </div>
+            <canvas id="dailyPowerChart" width="1400" height="500"></canvas>
+            <div class="stats-box" id="statsContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        const WIND_TURBINES = {
+            'WT-3': { model: 'SWT-3kW', ratedPower: 3, cutInSpeed: 2.5, ratedSpeed: 9, cutOutSpeed: 25, diameter: 3.2 },
+            'WT-10': { model: 'SWT-10kW', ratedPower: 10, cutInSpeed: 3.0, ratedSpeed: 10, cutOutSpeed: 25, diameter: 7.0 },
+            'WT-50': { model: 'MWT-50kW', ratedPower: 50, cutInSpeed: 3.0, ratedSpeed: 11, cutOutSpeed: 25, diameter: 15 },
+            'WT-1500': { model: 'GW87/1500', ratedPower: 1500, cutInSpeed: 3.0, ratedSpeed: 11, cutOutSpeed: 25, diameter: 87 },
+            'WT-2500': { model: 'GW121/2500', ratedPower: 2500, cutInSpeed: 3.0, ratedSpeed: 10.5, cutOutSpeed: 25, diameter: 121 },
+            'WT-3000': { model: 'MySE3.0-135', ratedPower: 3000, cutInSpeed: 3.0, ratedSpeed: 10.5, cutOutSpeed: 25, diameter: 135 },
+            'WT-3600': { model: 'EN-141/3.6', ratedPower: 3600, cutInSpeed: 3.0, ratedSpeed: 10, cutOutSpeed: 25, diameter: 141 }
+        };
+        
+        const COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'];
+        
+        const CP_TABLE = {
+            'WT-3': [0,0,0.08,0.14,0.19,0.22,0.25,0.27,0.29,0.31,0.32,0.33,0.34,0.35,0.36,0.37,0.37,0.38,0.39,0.39,0.40,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.44,0.44,0.44,0.44,0.44,0.45,0.45,0.45,0.45],
+            'WT-10': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.28,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44],
+            'WT-50': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44],
+            'WT-1500': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44],
+            'WT-2500': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44],
+            'WT-3000': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44],
+            'WT-3600': [0,0,0,0.00,0.07,0.12,0.17,0.20,0.23,0.25,0.27,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.36,0.37,0.37,0.38,0.38,0.39,0.39,0.40,0.40,0.41,0.41,0.41,0.42,0.42,0.42,0.43,0.43,0.43,0.43,0.44,0.44,0.44]
+        };
+        
+        const ETA_TOTAL = 0.92 * 0.95 * 0.95;
+        const RHO = 1.225;
+        
+        function getCp(turbineId, windSpeed) {
+            const cpArray = CP_TABLE[turbineId];
+            const index = Math.floor(windSpeed * 2);
+            if (index < 0) return 0;
+            if (index >= cpArray.length - 1) return cpArray[cpArray.length - 1];
+            const fraction = (windSpeed * 2) - index;
+            return cpArray[index] + (cpArray[index + 1] - cpArray[index]) * fraction;
+        }
+        
+        function calculatePower(turbine, windSpeed) {
+            const { cutInSpeed, ratedSpeed, cutOutSpeed, ratedPower, diameter } = turbine;
+            if (windSpeed <= cutInSpeed || windSpeed > cutOutSpeed) return 0;
+            if (windSpeed > ratedSpeed) return ratedPower;
+            const turbineId = Object.keys(WIND_TURBINES).find(key => WIND_TURBINES[key] === turbine);
+            const Cp = getCp(turbineId, windSpeed);
+            const power = (1/8) * Cp * ETA_TOTAL * RHO * Math.PI * Math.pow(diameter, 2) * Math.pow(windSpeed, 3) / 1000;
+            return Math.min(power, ratedPower);
+        }
+        
+        function getSelectedTurbines(className) {
+            const checkboxes = document.querySelectorAll(`.${className}:checked`);
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+        
+        // 在图内绘制图例（右上角，避免遮挡曲线）
+        function drawLegendInChart(ctx, selectedIds, chartPadding, chartWidth, chartHeight) {
+            const itemHeight = 20;
+            const itemWidth = 120;
+            const legendPadding = 10;
+            
+            // 计算图例尺寸
+            const cols = Math.min(2, selectedIds.length); // 最多2列
+            const rows = Math.ceil(selectedIds.length / cols);
+            const legendWidth = cols * itemWidth + legendPadding * 2;
+            const legendHeight = rows * itemHeight + legendPadding * 2;
+            
+            // 图例位置：右上角
+            const legendX = chartPadding.left + chartWidth - legendWidth - 10;
+            const legendY = chartPadding.top + 10;
+            
+            // 绘制半透明背景
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.fillRect(legendX, legendY, legendWidth, legendHeight);
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(legendX, legendY, legendWidth, legendHeight);
+            
+            // 绘制图例项
+            selectedIds.forEach((id, index) => {
+                const turbine = WIND_TURBINES[id];
+                const color = COLORS[index % COLORS.length];
+                const col = index % cols;
+                const row = Math.floor(index / cols);
+                const itemX = legendX + legendPadding + col * itemWidth;
+                const itemY = legendY + legendPadding + row * itemHeight;
+                
+                // 绘制颜色线
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(itemX, itemY + 10);
+                ctx.lineTo(itemX + 25, itemY + 10);
+                ctx.stroke();
+                
+                // 绘制文字
+                ctx.fillStyle = '#333';
+                ctx.font = '11px Arial';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(turbine.model, itemX + 30, itemY + 10);
+            });
+        }
+
+        
+        function drawMultiPowerCurve() {
+            const canvas = document.getElementById('powerChart');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 40, right: 60, bottom: 60, left: 80 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+            
+            ctx.clearRect(0, 0, width, height);
+            
+            const selectedIds = getSelectedTurbines('static-turbine');
+            if (selectedIds.length === 0) {
+                ctx.fillStyle = '#666';
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('请至少选择一个风机型号', width / 2, height / 2);
+                return;
+            }
+            
+            const windSpeeds = [];
+            for (let v = 0; v <= 25; v += 0.5) windSpeeds.push(v);
+            
+            let maxPower = 0;
+            const allData = {};
+            selectedIds.forEach(id => {
+                const turbine = WIND_TURBINES[id];
+                const powers = windSpeeds.map(v => calculatePower(turbine, v));
+                allData[id] = powers;
+                maxPower = Math.max(maxPower, ...powers);
+            });
+            
+            maxPower = Math.ceil(maxPower * 1.1);
+            
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(padding.left, padding.top, chartWidth, chartHeight);
+            
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 10; i++) {
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(padding.left + chartWidth, y);
+                ctx.stroke();
+            }
+            for (let i = 0; i <= 10; i++) {
+                const x = padding.left + (chartWidth / 10) * i;
+                ctx.beginPath();
+                ctx.moveTo(x, padding.top);
+                ctx.lineTo(x, padding.top + chartHeight);
+                ctx.stroke();
+            }
+            
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, padding.top + chartHeight);
+            ctx.lineTo(padding.left + chartWidth, padding.top + chartHeight);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('风速 (m/s)', padding.left + chartWidth / 2, height - 10);
+            ctx.save();
+            ctx.translate(15, padding.top + chartHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('功率 (kW)', 0, 0);
+            ctx.restore();
+            
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            for (let i = 0; i <= 10; i++) {
+                const v = (25 / 10) * i;
+                const x = padding.left + (chartWidth / 10) * i;
+                ctx.fillText(v.toFixed(1), x, padding.top + chartHeight + 10);
+            }
+            
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            for (let i = 0; i <= 10; i++) {
+                const p = maxPower - (maxPower / 10) * i;
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.fillText(p.toFixed(0), padding.left - 10, y);
+            }
+            
+            selectedIds.forEach((id, index) => {
+                const powers = allData[id];
+                const color = COLORS[index % COLORS.length];
+                
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                
+                windSpeeds.forEach((v, i) => {
+                    const x = padding.left + (v / 25) * chartWidth;
+                    const y = padding.top + chartHeight - (powers[i] / maxPower) * chartHeight;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.stroke();
+            });
+            
+            // 在图内绘制图例（右上角）
+            drawLegendInChart(ctx, selectedIds, padding, chartWidth, chartHeight);
+        }
+        
+        function drawMultiCpCurve() {
+            const canvas = document.getElementById('cpChart');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 40, right: 60, bottom: 60, left: 80 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+            
+            ctx.clearRect(0, 0, width, height);
+            
+            const selectedIds = getSelectedTurbines('static-turbine');
+            if (selectedIds.length === 0) {
+                ctx.fillStyle = '#666';
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('请至少选择一个风机型号', width / 2, height / 2);
+                return;
+            }
+            
+            const windSpeeds = [];
+            for (let v = 0; v <= 25; v += 0.5) windSpeeds.push(v);
+            
+            const allData = {};
+            selectedIds.forEach(id => {
+                const cpValues = windSpeeds.map(v => getCp(id, v));
+                allData[id] = cpValues;
+            });
+            
+            const maxCp = 0.5;
+            
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(padding.left, padding.top, chartWidth, chartHeight);
+            
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 10; i++) {
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(padding.left + chartWidth, y);
+                ctx.stroke();
+            }
+            for (let i = 0; i <= 10; i++) {
+                const x = padding.left + (chartWidth / 10) * i;
+                ctx.beginPath();
+                ctx.moveTo(x, padding.top);
+                ctx.lineTo(x, padding.top + chartHeight);
+                ctx.stroke();
+            }
+            
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, padding.top + chartHeight);
+            ctx.lineTo(padding.left + chartWidth, padding.top + chartHeight);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('风速 (m/s)', padding.left + chartWidth / 2, height - 10);
+            ctx.save();
+            ctx.translate(15, padding.top + chartHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('风能利用系数 Cp', 0, 0);
+            ctx.restore();
+            
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            for (let i = 0; i <= 10; i++) {
+                const v = (25 / 10) * i;
+                const x = padding.left + (chartWidth / 10) * i;
+                ctx.fillText(v.toFixed(1), x, padding.top + chartHeight + 10);
+            }
+            
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            for (let i = 0; i <= 10; i++) {
+                const cp = maxCp - (maxCp / 10) * i;
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.fillText(cp.toFixed(2), padding.left - 10, y);
+            }
+            
+            selectedIds.forEach((id, index) => {
+                const cpValues = allData[id];
+                const color = COLORS[index % COLORS.length];
+                
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                
+                windSpeeds.forEach((v, i) => {
+                    const x = padding.left + (v / 25) * chartWidth;
+                    const y = padding.top + chartHeight - (cpValues[i] / maxCp) * chartHeight;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.stroke();
+            });
+            
+            // 在图内绘制图例（右上角）
+            drawLegendInChart(ctx, selectedIds, padding, chartWidth, chartHeight);
+        }
+        
+        function updateStaticCharts() {
+            drawMultiPowerCurve();
+            drawMultiCpCurve();
+        }
+        
+        // 生成某一天的风速数据（24小时，每小时一个数据点）
+        function generateDailyWindSpeed(month) {
+            const windSpeeds = [];
+            const baseWindSpeed = {
+                1: 12,   // 冬季风速较高
+                4: 10,   // 春季
+                7: 8,    // 夏季风速较低
+                10: 11   // 秋季
+            }[month] || 10;
+            
+            // 模拟一天24小时的风速变化
+            const pattern = [
+                10, 9, 16, 24, 15, 15, 9, 15, 20, 21, 10, 8, 
+                10, 15, 16, 10, 18, 9, 13, 26, 8, 13, 8, 10
+            ];
+            
+            for (let hour = 0; hour < 24; hour++) {
+                const factor = baseWindSpeed / 13;
+                windSpeeds.push(pattern[hour] * factor);
+            }
+            
+            return windSpeeds;
+        }
+        
+        function drawDailyPowerCurve(selectedIds, windSpeeds) {
+            const canvas = document.getElementById('dailyPowerChart');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 60, right: 60, bottom: 60, left: 80 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+            
+            ctx.clearRect(0, 0, width, height);
+            
+            if (selectedIds.length === 0) {
+                ctx.fillStyle = '#666';
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('请至少选择一个风机型号', width / 2, height / 2);
+                return;
+            }
+            
+            // 计算所有风机的功率数据
+            const allPowers = {};
+            let maxPower = 0;
+            selectedIds.forEach(id => {
+                const turbine = WIND_TURBINES[id];
+                const powers = windSpeeds.map(v => calculatePower(turbine, v));
+                allPowers[id] = powers;
+                maxPower = Math.max(maxPower, ...powers);
+            });
+            
+            maxPower = Math.ceil(maxPower * 1.1);
+            
+            // 背景
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(padding.left, padding.top, chartWidth, chartHeight);
+            
+            // 网格线
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 10; i++) {
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(padding.left + chartWidth, y);
+                ctx.stroke();
+            }
+            for (let i = 0; i <= 24; i++) {
+                const x = padding.left + (chartWidth / 24) * i;
+                ctx.beginPath();
+                ctx.moveTo(x, padding.top);
+                ctx.lineTo(x, padding.top + chartHeight);
+                ctx.stroke();
+            }
+            
+            // 坐标轴
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, padding.top + chartHeight);
+            ctx.lineTo(padding.left + chartWidth, padding.top + chartHeight);
+            ctx.stroke();
+            
+            // 标签
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('时间 (h)', padding.left + chartWidth / 2, height - 10);
+            ctx.save();
+            ctx.translate(15, padding.top + chartHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('功率 (kW)', 0, 0);
+            ctx.restore();
+            
+            // X轴刻度（时间）
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            for (let i = 0; i <= 24; i += 2) {
+                const x = padding.left + (chartWidth / 24) * i;
+                ctx.fillText(i.toString(), x, padding.top + chartHeight + 10);
+            }
+            
+            // Y轴刻度（功率）
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            for (let i = 0; i <= 10; i++) {
+                const p = maxPower - (maxPower / 10) * i;
+                const y = padding.top + (chartHeight / 10) * i;
+                ctx.fillText(p.toFixed(0), padding.left - 10, y);
+            }
+            
+            // 绘制多条功率曲线
+            selectedIds.forEach((id, index) => {
+                const powers = allPowers[id];
+                const color = COLORS[index % COLORS.length];
+                
+                // 绘制曲线
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                powers.forEach((p, i) => {
+                    const x = padding.left + (i / 24) * chartWidth;
+                    const y = padding.top + chartHeight - (p / maxPower) * chartHeight;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.stroke();
+                
+                // 绘制数据点
+                ctx.fillStyle = color;
+                powers.forEach((p, i) => {
+                    const x = padding.left + (i / 24) * chartWidth;
+                    const y = padding.top + chartHeight - (p / maxPower) * chartHeight;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            });
+            
+            // 在图内绘制图例（右上角）
+            drawLegendInChart(ctx, selectedIds, padding, chartWidth, chartHeight);
+            
+            // 更新统计信息
+            updateStats(selectedIds, allPowers, windSpeeds);
+        }
+        
+        function updateStats(selectedIds, allPowers, windSpeeds) {
+            const statsContainer = document.getElementById('statsContainer');
+            statsContainer.innerHTML = '';
+            
+            selectedIds.forEach((id, index) => {
+                const turbine = WIND_TURBINES[id];
+                const powers = allPowers[id];
+                const color = COLORS[index % COLORS.length];
+                
+                const dailyEnergy = powers.reduce((sum, p) => sum + p, 0);
+                const avgPower = dailyEnergy / 24;
+                const maxPowerValue = Math.max(...powers);
+                const avgWindSpeed = windSpeeds.reduce((sum, v) => sum + v, 0) / 24;
+                
+                const statCard = document.createElement('div');
+                statCard.style.border = `3px solid ${color}`;
+                statCard.style.background = 'white';
+                statCard.style.padding = '15px';
+                statCard.style.borderRadius = '8px';
+                
+                statCard.innerHTML = `
+                    <h4 style="color: ${color}; margin-bottom: 10px; text-align: center;">${turbine.model}</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;">
+                        <div>
+                            <div style="color: #666;">日发电量</div>
+                            <div style="font-size: 18px; font-weight: bold; color: ${color};">${dailyEnergy.toFixed(2)} kWh</div>
+                        </div>
+                        <div>
+                            <div style="color: #666;">平均功率</div>
+                            <div style="font-size: 18px; font-weight: bold; color: ${color};">${avgPower.toFixed(2)} kW</div>
+                        </div>
+                        <div>
+                            <div style="color: #666;">最大功率</div>
+                            <div style="font-size: 18px; font-weight: bold; color: ${color};">${maxPowerValue.toFixed(2)} kW</div>
+                        </div>
+                        <div>
+                            <div style="color: #666;">平均风速</div>
+                            <div style="font-size: 18px; font-weight: bold; color: ${color};">${avgWindSpeed.toFixed(2)} m/s</div>
+                        </div>
+                    </div>
+                `;
+                
+                statsContainer.appendChild(statCard);
+            });
+        }
+        
+        function updateDailyPower() {
+            const selectedIds = getSelectedTurbines('daily-turbine');
+            const month = parseInt(document.getElementById('dailyDateSelect').value);
+            const windSpeeds = generateDailyWindSpeed(month);
+            drawDailyPowerCurve(selectedIds, windSpeeds);
+        }
+        
+        window.onload = function() {
+            updateStaticCharts();
+            updateDailyPower();
+        };
+    </script>
+</body>
+</html>

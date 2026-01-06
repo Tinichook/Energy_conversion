@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "generatedAt": "2025-12-30",
+  "description": "各区域预计算的最优解，按区域类型分组",
+  "solutionsByType": {
+    "工业区": {
+      "dailyLoad": 1320,
+      "peakLoad": 65,
+      "biomassOutput": 60,
+      "recommendedRoute": "直燃",
+      "optimalConfig": {
+        "wind": { "model": "GW155-4.5MW", "count": 8, "totalMW": 36 },
+        "solar": { "model": "隆基Hi-MO 6", "count": 50000, "totalMW": 28.5 },
+        "biomass": {
+          "route": "直燃",
+          "primary": { "model": "DZL4-1.25-AII", "count": 2 },
+          "secondary": { "model": "N6-3.43", "count": 1 }
+        },
+        "battery": { "model": "宁德时代EnerOne", "count": 200, "totalMWh": 57.2 },
+        "inverter": { "model": "阳光电源SG250HX", "count": 115 }
+      },
+      "totalCost": 28500,
+      "reliability": 99.5,
+      "curtailmentRate": 8.2
+    },
+    "居民区": {
+      "dailyLoad": 660,
+      "peakLoad": 35,
+      "biomassOutput": 80,
+      "recommendedRoute": "沼气",
+      "optimalConfig": {
+        "wind": { "model": "GW155-4.5MW", "count": 4, "totalMW": 18 },
+        "solar": { "model": "隆基Hi-MO 6", "count": 25000, "totalMW": 14.25 },
+        "biomass": {
+          "route": "沼气",
+          "primary": { "model": "CSTR-500", "count": 3 },
+          "secondary": { "model": "MWM TCG 2020 V12", "count": 2 }
+        },
+        "battery": { "model": "宁德时代EnerOne", "count": 100, "totalMWh": 28.6 },
+        "inverter": { "model": "阳光电源SG250HX", "count": 58 }
+      },
+      "totalCost": 15200,
+      "reliability": 99.3,
+      "curtailmentRate": 6.5
+    },
+    "山地区": {
+      "dailyLoad": 120,
+      "peakLoad": 8,
+      "biomassOutput": 30,
+      "recommendedRoute": "气化",
+      "optimalConfig": {
+        "wind": { "model": "GW136-4.2MW", "count": 2, "totalMW": 8.4 },
+        "solar": { "model": "隆基Hi-MO 6", "count": 8000, "totalMW": 4.56 },
+        "biomass": {
+          "route": "气化",
+          "primary": { "model": "HL-300", "count": 1 },
+          "secondary": { "model": "曼海姆 MWM TCG 2016 V08", "count": 1 }
+        },
+        "battery": { "model": "比亚迪BatteryBox", "count": 50, "totalMWh": 6.4 },
+        "inverter": { "model": "华为SUN2000-100KTL", "count": 46 }
+      },
+      "totalCost": 5800,
+      "reliability": 99.1,
+      "curtailmentRate": 12.3
+    },
+    "农业区": {
+      "dailyLoad": 240,
+      "peakLoad": 12,
+      "biomassOutput": 175,
+      "recommendedRoute": "直燃",
+      "optimalConfig": {
+        "wind": { "model": "GW136-4.2MW", "count": 2, "totalMW": 8.4 },
+        "solar": { "model": "隆基Hi-MO 6", "count": 12000, "totalMW": 6.84 },
+        "biomass": {
+          "route": "直燃",
+          "primary": { "model": "SZL6-1.25-AII", "count": 2 },
+          "secondary": { "model": "N3-1.5", "count": 1 }
+        },
+        "battery": { "model": "宁德时代EnerOne", "count": 40, "totalMWh": 11.44 },
+        "inverter": { "model": "华为SUN2000-100KTL", "count": 69 }
+      },
+      "totalCost": 8500,
+      "reliability": 99.4,
+      "curtailmentRate": 5.8
+    },
+    "林业区": {
+      "dailyLoad": 72,
+      "peakLoad": 4,
+      "biomassOutput": 150,
+      "recommendedRoute": "直燃",
+      "optimalConfig": {
+        "wind": { "model": "MY1.5-82", "count": 2, "totalMW": 3 },
+        "solar": { "model": "晶科Tiger Neo", "count": 4000, "totalMW": 2.4 },
+        "biomass": {
+          "route": "直燃",
+          "primary": { "model": "SZL6-1.25-AII", "count": 2 },
+          "secondary": { "model": "N3-1.5", "count": 1 }
+        },
+        "battery": { "model": "比亚迪BatteryBox", "count": 30, "totalMWh": 3.84 },
+        "inverter": { "model": "华为SUN2000-100KTL", "count": 24 }
+      },
+      "totalCost": 6200,
+      "reliability": 99.6,
+      "curtailmentRate": 15.2
+    }
+  },
+  "scoringCriteria": {
+    "reliability": { "weight": 30, "description": "供电可靠率>=99%得满分" },
+    "matching": { "weight": 20, "description": "设备匹配正确得满分" },
+    "economics": { "weight": 30, "description": "成本在最优解110%内得满分" },
+    "stability": { "weight": 10, "description": "弃电率<10%且SOC稳定得满分" },
+    "groupBonus": { "weight": 10, "description": "小组最优解加分" }
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试</title>
+</head>
+<body>
+    <h1>风机功率曲线测试</h1>
+    <canvas id="chart" width="800" height="400"></canvas>
+    
+    <script>
+        // 测试基本功能
+        const canvas = document.getElementById('chart');
+        const ctx = canvas.getContext('2d');
+        
+        ctx.fillStyle = '#007bff';
+        ctx.fillRect(50, 50, 100, 100);
+        ctx.fillStyle = '#000';
+        ctx.font = '20px Arial';
+        ctx.fillText('测试成功！', 200, 100);
+        
+        console.log('页面加载成功');
+    </script>
+</body>
+</html>

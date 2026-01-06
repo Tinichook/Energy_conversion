@@ -1,0 +1,4733 @@
+{
+  "version": "1.0",
+  "lastUpdate": 1767670908010,
+  "regions": {
+    "1": [
+      {
+        "id": "opt-1-320",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 16830.54,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 44.81101135372589,
+          "shortageHours": 0,
+          "totalGeneration": 157697.5829158746,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 70665.88178498387,
+          "totalShortage": 0,
+          "avgSOC": 98.28605108788082,
+          "minSOC": 20.178945252389642,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 1.8226404324184724
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470831
+      },
+      {
+        "id": "opt-1-199",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 65742,
+              "unitCapacity": 0.41,
+              "totalCapacity": 26954.22,
+              "unitPrice": 0.078,
+              "totalPrice": 5127.876
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 17,
+              "unitCapacity": 1250,
+              "totalCapacity": 21250,
+              "unitPrice": 42,
+              "totalPrice": 714
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 17236.68,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 51.06851614203738,
+          "shortageHours": 0,
+          "totalGeneration": 177619.77024270126,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 90707.7810378436,
+          "totalShortage": 0,
+          "avgSOC": 98.51951503656723,
+          "minSOC": 10.457148660504624,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 53126.37160752164,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.6140250923897326,
+            "bio": 0.6074790707414903,
+            "total": 2.0528975070843494
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470252
+      },
+      {
+        "id": "opt-1-499",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 11,
+              "unitCapacity": 1500,
+              "totalCapacity": 16500,
+              "unitPrice": 520,
+              "totalPrice": 5720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 16592.34,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 52.87727455848133,
+          "shortageHours": 0,
+          "totalGeneration": 184672.60740406768,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 97649.8416513552,
+          "totalShortage": 0,
+          "avgSOC": 98.06148466183066,
+          "minSOC": 0.9369890728788812,
+          "maxSOC": 100,
+          "windGeneration": 98908.42312337247,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 1.1431658479355487,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 2.134412936400895
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668471687
+      },
+      {
+        "id": "opt-1-4",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 14740.67,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.57297830569648,
+          "shortageHours": 0,
+          "totalGeneration": 146354.42363003775,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 59380.34854884234,
+          "totalShortage": 0,
+          "avgSOC": 97.92321647713352,
+          "minSOC": 3.159022192047957,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 1.6915382280380853
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469305
+      },
+      {
+        "id": "opt-1-5",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 16538.87,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.570750004487394,
+          "shortageHours": 0,
+          "totalGeneration": 146354.42363003775,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 59377.08733145104,
+          "totalShortage": 0,
+          "avgSOC": 98.33451453791668,
+          "minSOC": 22.527217753638354,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 1.6915382280380853
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469309
+      },
+      {
+        "id": "opt-1-6",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 7032,
+              "unitCapacity": 5.12,
+              "totalCapacity": 36003.840000000004,
+              "unitPrice": 1.35,
+              "totalPrice": 9493.2
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 18,
+              "unitCapacity": 1000,
+              "totalCapacity": 18000,
+              "unitPrice": 72,
+              "totalPrice": 1296
+            }
+          ]
+        },
+        "totalCost": 18337.07,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.5685217032783,
+          "shortageHours": 0,
+          "totalGeneration": 146354.42363003775,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 59373.82611405973,
+          "totalShortage": 0,
+          "avgSOC": 98.6082902732259,
+          "minSOC": 35.439348128031966,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 1.6915382280380853
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469314
+      },
+      {
+        "id": "opt-1-379",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 11,
+              "unitCapacity": 1500,
+              "totalCapacity": 16500,
+              "unitPrice": 520,
+              "totalPrice": 5720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 65742,
+              "unitCapacity": 0.41,
+              "totalCapacity": 26954.22,
+              "unitPrice": 0.078,
+              "totalPrice": 5127.876
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 17,
+              "unitCapacity": 1250,
+              "totalCapacity": 21250,
+              "unitPrice": 42,
+              "totalPrice": 714
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 18796.68,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 57.52220892369532,
+          "shortageHours": 0,
+          "totalGeneration": 204594.794730894,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 117687.44527211043,
+          "totalShortage": 0,
+          "avgSOC": 98.63870449376132,
+          "minSOC": 11.17045616789644,
+          "maxSOC": 100,
+          "windGeneration": 98908.42312337247,
+          "solarGeneration": 53126.37160752164,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 1.1431658479355487,
+            "solar": 0.6140250923897326,
+            "bio": 0.6074790707414903,
+            "total": 2.3646700110667718
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668471112
+      },
+      {
+        "id": "opt-1-319",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 15032.34,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 44.81307937362258,
+          "shortageHours": 0,
+          "totalGeneration": 157697.5829158746,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 70669.14300237516,
+          "totalShortage": 0,
+          "avgSOC": 97.86103149415582,
+          "minSOC": 0.2236815654870666,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 1.8226404324184724
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470826
+      },
+      {
+        "id": "opt-1-63",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 115047,
+              "unitCapacity": 0.41,
+              "totalCapacity": 47169.27,
+              "unitPrice": 0.078,
+              "totalPrice": 8973.666
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 3516,
+              "unitCapacity": 5.12,
+              "totalCapacity": 18001.920000000002,
+              "unitPrice": 1.35,
+              "totalPrice": 4746.6
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 31,
+              "unitCapacity": 1250,
+              "totalCapacity": 38750,
+              "unitPrice": 42,
+              "totalPrice": 1302
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 9,
+              "unitCapacity": 1000,
+              "totalCapacity": 9000,
+              "unitPrice": 72,
+              "totalPrice": 648
+            }
+          ]
+        },
+        "totalCost": 18826.27,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 56.45915239631286,
+          "shortageHours": 0,
+          "totalGeneration": 199479.987133583,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 112624.7099358949,
+          "totalShortage": 0,
+          "avgSOC": 98.22142637461907,
+          "minSOC": 2.6114490978115428,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 92969.93815719844,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 1.0745299018003944,
+            "bio": 0.6074790707414903,
+            "total": 2.305553980506728
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469589
+      },
+      {
+        "id": "opt-1-500",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 11,
+              "unitCapacity": 1500,
+              "totalCapacity": 16500,
+              "unitPrice": 520,
+              "totalPrice": 5720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 18390.54,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 52.875508613094446,
+          "shortageHours": 0,
+          "totalGeneration": 184672.60740406768,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 97646.5804339639,
+          "totalShortage": 0,
+          "avgSOC": 98.44690462444164,
+          "minSOC": 20.749591258303095,
+          "maxSOC": 100,
+          "windGeneration": 98908.42312337247,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 1.1431658479355487,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 2.134412936400895
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668471691
+      },
+      {
+        "id": "opt-1-141",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 7032,
+              "unitCapacity": 5.12,
+              "totalCapacity": 36003.840000000004,
+              "unitPrice": 1.35,
+              "totalPrice": 9493.2
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 18,
+              "unitCapacity": 1000,
+              "totalCapacity": 18000,
+              "unitPrice": 72,
+              "totalPrice": 1296
+            }
+          ]
+        },
+        "totalCost": 17588.74,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.700835033749144,
+          "shortageHours": 0,
+          "totalGeneration": 139714.23325707935,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 52673.43259891897,
+          "totalShortage": 0,
+          "avgSOC": 98.3337783518125,
+          "minSOC": 33.16542881815057,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 1.614792096430189
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469978
+      },
+      {
+        "id": "opt-1-364",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 11,
+              "unitCapacity": 1500,
+              "totalCapacity": 16500,
+              "unitPrice": 520,
+              "totalPrice": 5720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 17340.67,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 54.54347350103173,
+          "shortageHours": 0,
+          "totalGeneration": 191312.7977770254,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 104348.64515959426,
+          "totalShortage": 0,
+          "avgSOC": 98.35937527115553,
+          "minSOC": 4.34786803770098,
+          "maxSOC": 100,
+          "windGeneration": 98908.42312337247,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 1.1431658479355487,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 2.211159068008791
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668471043
+      },
+      {
+        "id": "opt-1-321",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 7032,
+              "unitCapacity": 5.12,
+              "totalCapacity": 36003.840000000004,
+              "unitPrice": 1.35,
+              "totalPrice": 9493.2
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 18,
+              "unitCapacity": 1000,
+              "totalCapacity": 18000,
+              "unitPrice": 72,
+              "totalPrice": 1296
+            }
+          ]
+        },
+        "totalCost": 18628.74,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 44.80894333382919,
+          "shortageHours": 0,
+          "totalGeneration": 157697.5829158746,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 70662.62056759256,
+          "totalShortage": 0,
+          "avgSOC": 98.56885535862239,
+          "minSOC": 33.48245437699138,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 1.8226404324184724
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470839
+      },
+      {
+        "id": "opt-1-34",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 82177,
+              "unitCapacity": 0.41,
+              "totalCapacity": 33692.57,
+              "unitPrice": 0.078,
+              "totalPrice": 6409.806
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 22,
+              "unitCapacity": 1250,
+              "totalCapacity": 27500,
+              "unitPrice": 42,
+              "totalPrice": 924
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 17682.61,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 49.752006942889786,
+          "shortageHours": 0,
+          "totalGeneration": 172917.60943379902,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 86029.98105098274,
+          "totalShortage": 0,
+          "avgSOC": 98.48560387652755,
+          "minSOC": 16.803783352163247,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 66407.56045741394,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.7675266955266202,
+            "bio": 0.6074790707414903,
+            "total": 1.9985507742329536
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469455
+      },
+      {
+        "id": "opt-1-185",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 17578.87,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 47.07687804086699,
+          "shortageHours": 0,
+          "totalGeneration": 164337.77328883283,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 77365.09310626032,
+          "totalShortage": 0,
+          "avgSOC": 98.55845913172126,
+          "minSOC": 22.90764842424732,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 1.8993865640263687
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470187
+      },
+      {
+        "id": "opt-1-140",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 41089,
+              "unitCapacity": 0.41,
+              "totalCapacity": 16846.49,
+              "unitPrice": 0.078,
+              "totalPrice": 3204.942
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 11,
+              "unitCapacity": 1250,
+              "totalCapacity": 13750,
+              "unitPrice": 42,
+              "totalPrice": 462
+            },
+            {
+              "model": "INV-110K",
+              "manufacturer": "阳光电源",
+              "count": 3,
+              "unitCapacity": 110,
+              "totalCapacity": 330,
+              "unitPrice": 4.2,
+              "totalPrice": 12.600000000000001
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 15790.54,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.70316923930235,
+          "shortageHours": 0,
+          "totalGeneration": 139714.23325707935,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 52676.693816310275,
+          "totalShortage": 0,
+          "avgSOC": 98.0051002322204,
+          "minSOC": 19.798514581780672,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 33204.184280695095,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.3837680177238557,
+            "bio": 0.6074790707414903,
+            "total": 1.614792096430189
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469969
+      },
+      {
+        "id": "opt-1-184",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 49306,
+              "unitCapacity": 0.41,
+              "totalCapacity": 20215.46,
+              "unitPrice": 0.078,
+              "totalPrice": 3845.868
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 13,
+              "unitCapacity": 1250,
+              "totalCapacity": 16250,
+              "unitPrice": 42,
+              "totalPrice": 546
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 15780.67,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 47.07886250087641,
+          "shortageHours": 0,
+          "totalGeneration": 164337.77328883283,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 77368.35432365161,
+          "totalShortage": 0,
+          "avgSOC": 98.201541548956,
+          "minSOC": 3.634560530309165,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 39844.37465365295,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.46051414933175194,
+            "bio": 0.6074790707414903,
+            "total": 1.8993865640263687
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470183
+      },
+      {
+        "id": "opt-1-214",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 8,
+              "unitCapacity": 1500,
+              "totalCapacity": 12000,
+              "unitPrice": 520,
+              "totalPrice": 4160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 82177,
+              "unitCapacity": 0.41,
+              "totalCapacity": 33692.57,
+              "unitPrice": 0.078,
+              "totalPrice": 6409.806
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 22,
+              "unitCapacity": 1250,
+              "totalCapacity": 27500,
+              "unitPrice": 42,
+              "totalPrice": 924
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 18722.61,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 54.48755061647975,
+          "shortageHours": 0,
+          "totalGeneration": 190900.959092594,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 104017.25671292248,
+          "totalShortage": 0,
+          "avgSOC": 98.66583476746744,
+          "minSOC": 17.279321690424453,
+          "maxSOC": 100,
+          "windGeneration": 71933.39863517998,
+          "solarGeneration": 66407.56045741394,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.8313933439531264,
+            "solar": 0.7675266955266202,
+            "bio": 0.6074790707414903,
+            "total": 2.206399110221237
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668470325
+      },
+      {
+        "id": "opt-1-19",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 65742,
+              "unitCapacity": 0.41,
+              "totalCapacity": 26954.22,
+              "unitPrice": 0.078,
+              "totalPrice": 5127.876
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 4688,
+              "unitCapacity": 5.12,
+              "totalCapacity": 24002.56,
+              "unitPrice": 1.35,
+              "totalPrice": 6328.8
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 17,
+              "unitCapacity": 1250,
+              "totalCapacity": 21250,
+              "unitPrice": 42,
+              "totalPrice": 714
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 12,
+              "unitCapacity": 1000,
+              "totalCapacity": 12000,
+              "unitPrice": 72,
+              "totalPrice": 864
+            }
+          ]
+        },
+        "totalCost": 16196.68,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 45.5535384108488,
+          "shortageHours": 0,
+          "totalGeneration": 159636.42058390626,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 72720.03816839389,
+          "totalShortage": 0,
+          "avgSOC": 98.30576175883871,
+          "minSOC": 9.981610322243416,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 53126.37160752164,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.6140250923897326,
+            "bio": 0.6074790707414903,
+            "total": 1.845049171096066
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469380
+      },
+      {
+        "id": "opt-1-20",
+        "regionId": 1,
+        "regionName": "区域-1",
+        "regionType": "农业区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 6,
+              "unitCapacity": 1500,
+              "totalCapacity": 9000,
+              "unitPrice": 520,
+              "totalPrice": 3120
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 65742,
+              "unitCapacity": 0.41,
+              "totalCapacity": 26954.22,
+              "unitPrice": 0.078,
+              "totalPrice": 5127.876
+            }
+          ],
+          "biomass": {
+            "route": "直燃",
+            "primary": {
+              "model": "GF-20",
+              "manufacturer": "杭州锅炉",
+              "count": 1,
+              "unitCapacity": 20,
+              "totalCapacity": 20,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "ST-6",
+              "manufacturer": "杭州汽轮机",
+              "count": 1,
+              "unitCapacity": 6000,
+              "totalCapacity": 6000,
+              "unitPrice": 0,
+              "totalPrice": 0
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-100L",
+              "manufacturer": "宁德时代",
+              "count": 5860,
+              "unitCapacity": 5.12,
+              "totalCapacity": 30003.2,
+              "unitPrice": 1.35,
+              "totalPrice": 7911.000000000001
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 17,
+              "unitCapacity": 1250,
+              "totalCapacity": 21250,
+              "unitPrice": 42,
+              "totalPrice": 714
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 15,
+              "unitCapacity": 1000,
+              "totalCapacity": 15000,
+              "unitPrice": 72,
+              "totalPrice": 1080
+            }
+          ]
+        },
+        "totalCost": 17994.88,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 45.551495507744754,
+          "shortageHours": 0,
+          "totalGeneration": 159636.42058390626,
+          "totalLoad": 86521.49931000116,
+          "totalCurtailment": 72716.77695100258,
+          "totalShortage": 0,
+          "avgSOC": 98.64055076328054,
+          "minSOC": 27.98528825779472,
+          "maxSOC": 100,
+          "windGeneration": 53950.04897638483,
+          "solarGeneration": 53126.37160752164,
+          "biomassGeneration": 52560,
+          "energyRatio": {
+            "wind": 0.623545007964843,
+            "solar": 0.6140250923897326,
+            "bio": 0.6074790707414903,
+            "total": 1.845049171096066
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767668469384
+      }
+    ],
+    "10": [],
+    "12": [],
+    "26": [],
+    "53": [
+      {
+        "id": "opt-53-91856",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 36,
+              "unitCapacity": 1500,
+              "totalCapacity": 54000,
+              "unitPrice": 520,
+              "totalPrice": 18720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 233431,
+              "unitCapacity": 0.43,
+              "totalCapacity": 100375.33,
+              "unitPrice": 0.082,
+              "totalPrice": 19141.342
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 100134.84,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.49891424678406,
+          "shortageHours": 0,
+          "totalGeneration": 398275.9798140689,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 157314.68773229807,
+          "totalShortage": 0,
+          "avgSOC": 93.44839512887906,
+          "minSOC": 4.018802298430643,
+          "maxSOC": 100,
+          "windGeneration": 182661.98319157024,
+          "solarGeneration": 178683.78824663244,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7800414317483266,
+            "solar": 0.7630529110588916,
+            "bio": 0.15770710529309917,
+            "total": 1.7008014481003173
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670878055
+      },
+      {
+        "id": "opt-53-94549",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 33,
+              "unitCapacity": 1500,
+              "totalCapacity": 49500,
+              "unitPrice": 520,
+              "totalPrice": 17160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 233431,
+              "unitCapacity": 0.43,
+              "totalCapacity": 100375.33,
+              "unitPrice": 0.082,
+              "totalPrice": 19141.342
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 99499.34,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.086906367320935,
+          "shortageHours": 0,
+          "totalGeneration": 383054.14788143634,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 142062.93316092738,
+          "totalShortage": 0,
+          "avgSOC": 92.96958750491947,
+          "minSOC": 2.9656865295889956,
+          "maxSOC": 100,
+          "windGeneration": 167440.15125894005,
+          "solarGeneration": 178683.78824663244,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7150379791026357,
+            "solar": 0.7630529110588916,
+            "bio": 0.15770710529309917,
+            "total": 1.6357979954546265
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670890614
+      },
+      {
+        "id": "opt-53-82249",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 36,
+              "unitCapacity": 1500,
+              "totalCapacity": 54000,
+              "unitPrice": 520,
+              "totalPrice": 18720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 244818,
+              "unitCapacity": 0.41,
+              "totalCapacity": 100375.38,
+              "unitPrice": 0.078,
+              "totalPrice": 19095.804
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 101013.8,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.498451604275,
+          "shortageHours": 0,
+          "totalGeneration": 398276.06882188865,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 157312.88029502268,
+          "totalShortage": 0,
+          "avgSOC": 93.55695631345945,
+          "minSOC": 5.614753082150926,
+          "maxSOC": 100,
+          "windGeneration": 182661.98319157024,
+          "solarGeneration": 178683.87725445387,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7800414317483266,
+            "solar": 0.76305329115872,
+            "bio": 0.15770710529309917,
+            "total": 1.7008018282001458
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670833215
+      },
+      {
+        "id": "opt-53-82536",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 195854,
+              "unitCapacity": 0.41,
+              "totalCapacity": 80300.14,
+              "unitPrice": 0.078,
+              "totalPrice": 15276.612
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 58,
+              "unitCapacity": 1250,
+              "totalCapacity": 72500,
+              "unitPrice": 42,
+              "totalPrice": 2436
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 100314.11,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.80477851136902,
+          "shortageHours": 0,
+          "totalGeneration": 408204.49722323805,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 166566.9409653898,
+          "totalShortage": 0,
+          "avgSOC": 92.7136390736793,
+          "minSOC": 0.6291780915770767,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 142946.80985791062,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.6104413861995466,
+            "bio": 0.15770710529309917,
+            "total": 1.7432002811780556
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670834551
+      },
+      {
+        "id": "opt-53-82729",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 190958,
+              "unitCapacity": 0.41,
+              "totalCapacity": 78292.78,
+              "unitPrice": 0.078,
+              "totalPrice": 14894.724
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 56,
+              "unitCapacity": 1250,
+              "totalCapacity": 70000,
+              "unitPrice": 42,
+              "totalPrice": 2352
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 100778.72,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.25577974635824,
+          "shortageHours": 0,
+          "totalGeneration": 404631.0824292361,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 162887.39732801856,
+          "totalShortage": 0,
+          "avgSOC": 92.56269193492189,
+          "minSOC": 1.948182214253285,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 139373.39506390825,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.5951814424310564,
+            "bio": 0.15770710529309917,
+            "total": 1.7279403374095652
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670835447
+      },
+      {
+        "id": "opt-53-82529",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 195854,
+              "unitCapacity": 0.41,
+              "totalCapacity": 80300.14,
+              "unitPrice": 0.078,
+              "totalPrice": 15276.612
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 58,
+              "unitCapacity": 1250,
+              "totalCapacity": 72500,
+              "unitPrice": 42,
+              "totalPrice": 2436
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 101238.61,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.80431361224534,
+          "shortageHours": 0,
+          "totalGeneration": 408204.49722323805,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 166565.04322625935,
+          "totalShortage": 0,
+          "avgSOC": 92.83450946741706,
+          "minSOC": 2.2814820837153595,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 142946.80985791062,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.6104413861995466,
+            "bio": 0.15770710529309917,
+            "total": 1.7432002811780556
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670834517
+      },
+      {
+        "id": "opt-53-91756",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 27,
+              "unitCapacity": 1500,
+              "totalCapacity": 40500,
+              "unitPrice": 520,
+              "totalPrice": 14040
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 294123,
+              "unitCapacity": 0.43,
+              "totalCapacity": 126472.89,
+              "unitPrice": 0.082,
+              "totalPrice": 24118.086
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 91,
+              "unitCapacity": 1250,
+              "totalCapacity": 113750,
+              "unitPrice": 42,
+              "totalPrice": 3822
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 101187.59,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.72844197647844,
+          "shortageHours": 0,
+          "totalGeneration": 399068.22303226334,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 158543.5874339363,
+          "totalShortage": 0,
+          "avgSOC": 92.39293714921695,
+          "minSOC": 3.168372097340461,
+          "maxSOC": 100,
+          "windGeneration": 136996.4873936777,
+          "solarGeneration": 225141.5272627215,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.5850310738112451,
+            "solar": 0.961446471802694,
+            "bio": 0.15770710529309917,
+            "total": 1.7041846509070384
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670877587
+      },
+      {
+        "id": "opt-53-92129",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 186745,
+              "unitCapacity": 0.43,
+              "totalCapacity": 80300.35,
+              "unitPrice": 0.082,
+              "totalPrice": 15313.09
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 58,
+              "unitCapacity": 1250,
+              "totalCapacity": 72500,
+              "unitPrice": 42,
+              "totalPrice": 2436
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 101275.09,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.80437042795732,
+          "shortageHours": 0,
+          "totalGeneration": 408204.87105608673,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 166565.4276906912,
+          "totalShortage": 0,
+          "avgSOC": 92.83453618922418,
+          "minSOC": 2.2815169518867906,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 142947.18369075822,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.6104429826188156,
+            "bio": 0.15770710529309917,
+            "total": 1.7432018775973244
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670879335
+      },
+      {
+        "id": "opt-53-84949",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 33,
+              "unitCapacity": 1500,
+              "totalCapacity": 49500,
+              "unitPrice": 520,
+              "totalPrice": 17160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 244818,
+              "unitCapacity": 0.41,
+              "totalCapacity": 100375.38,
+              "unitPrice": 0.078,
+              "totalPrice": 19095.804
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 99453.8,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.08692132434204,
+          "shortageHours": 0,
+          "totalGeneration": 383054.2368892559,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 142063.02346467713,
+          "totalShortage": 0,
+          "avgSOC": 92.96959098881109,
+          "minSOC": 2.9657441082807723,
+          "maxSOC": 100,
+          "windGeneration": 167440.15125894005,
+          "solarGeneration": 178683.87725445387,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7150379791026357,
+            "solar": 0.76305329115872,
+            "bio": 0.15770710529309917,
+            "total": 1.6357983755544547
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670845758
+      },
+      {
+        "id": "opt-53-82736",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 190958,
+              "unitCapacity": 0.41,
+              "totalCapacity": 78292.78,
+              "unitPrice": 0.078,
+              "totalPrice": 14894.724
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 56,
+              "unitCapacity": 1250,
+              "totalCapacity": 70000,
+              "unitPrice": 42,
+              "totalPrice": 2352
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 99854.22,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.25624875114133,
+          "shortageHours": 0,
+          "totalGeneration": 404631.0824292361,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 162889.29506714898,
+          "totalShortage": 0,
+          "avgSOC": 92.43722542978522,
+          "minSOC": 0.29024251747442265,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 139373.39506390825,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.5951814424310564,
+            "bio": 0.15770710529309917,
+            "total": 1.7279403374095652
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670835481
+      },
+      {
+        "id": "opt-53-91849",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 36,
+              "unitCapacity": 1500,
+              "totalCapacity": 54000,
+              "unitPrice": 520,
+              "totalPrice": 18720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 233431,
+              "unitCapacity": 0.43,
+              "totalCapacity": 100375.33,
+              "unitPrice": 0.082,
+              "totalPrice": 19141.342
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 101059.34,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.4984377583121,
+          "shortageHours": 0,
+          "totalGeneration": 398275.9798140689,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 157312.78999316765,
+          "totalShortage": 0,
+          "avgSOC": 93.55695334386392,
+          "minSOC": 5.614744780205336,
+          "maxSOC": 100,
+          "windGeneration": 182661.98319157024,
+          "solarGeneration": 178683.78824663244,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7800414317483266,
+            "solar": 0.7630529110588916,
+            "bio": 0.15770710529309917,
+            "total": 1.7008014481003173
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670878020
+      },
+      {
+        "id": "opt-53-94556",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 33,
+              "unitCapacity": 1500,
+              "totalCapacity": 49500,
+              "unitPrice": 520,
+              "totalPrice": 17160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 233431,
+              "unitCapacity": 0.43,
+              "totalCapacity": 100375.33,
+              "unitPrice": 0.082,
+              "totalPrice": 19141.342
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 98574.84,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.087401790524396,
+          "shortageHours": 0,
+          "totalGeneration": 383054.14788143634,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 142064.8309000578,
+          "totalShortage": 0,
+          "avgSOC": 92.85111863000404,
+          "minSOC": 1.3249516214018664,
+          "maxSOC": 100,
+          "windGeneration": 167440.15125894005,
+          "solarGeneration": 178683.78824663244,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7150379791026357,
+            "solar": 0.7630529110588916,
+            "bio": 0.15770710529309917,
+            "total": 1.6357979954546265
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670890648
+      },
+      {
+        "id": "opt-53-84956",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 33,
+              "unitCapacity": 1500,
+              "totalCapacity": 49500,
+              "unitPrice": 520,
+              "totalPrice": 17160
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 244818,
+              "unitCapacity": 0.41,
+              "totalCapacity": 100375.38,
+              "unitPrice": 0.078,
+              "totalPrice": 19095.804
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 98529.3,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 37.08741674743038,
+          "shortageHours": 0,
+          "totalGeneration": 383054.2368892559,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 142064.92120380755,
+          "totalShortage": 0,
+          "avgSOC": 92.85112217280401,
+          "minSOC": 1.3250101736808841,
+          "maxSOC": 100,
+          "windGeneration": 167440.15125894005,
+          "solarGeneration": 178683.87725445387,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7150379791026357,
+            "solar": 0.76305329115872,
+            "bio": 0.15770710529309917,
+            "total": 1.6357983755544547
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670845793
+      },
+      {
+        "id": "opt-53-92329",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 182076,
+              "unitCapacity": 0.43,
+              "totalCapacity": 78292.68,
+              "unitPrice": 0.082,
+              "totalPrice": 14930.232
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 56,
+              "unitCapacity": 1250,
+              "totalCapacity": 70000,
+              "unitPrice": 42,
+              "totalPrice": 2352
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 100814.23,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.25575213118915,
+          "shortageHours": 0,
+          "totalGeneration": 404630.9044135951,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 162887.21392692573,
+          "totalShortage": 0,
+          "avgSOC": 92.56267779885565,
+          "minSOC": 1.948165610362131,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 139373.2170482664,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.595180682231404,
+            "bio": 0.15770710529309917,
+            "total": 1.7279395772099129
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670880272
+      },
+      {
+        "id": "opt-53-82256",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 36,
+              "unitCapacity": 1500,
+              "totalCapacity": 54000,
+              "unitPrice": 520,
+              "totalPrice": 18720
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 244818,
+              "unitCapacity": 0.41,
+              "totalCapacity": 100375.38,
+              "unitPrice": 0.078,
+              "totalPrice": 19095.804
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 73,
+              "unitCapacity": 1250,
+              "totalCapacity": 91250,
+              "unitPrice": 42,
+              "totalPrice": 3066
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 100089.3,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.498928092640476,
+          "shortageHours": 0,
+          "totalGeneration": 398276.06882188865,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 157314.7780341531,
+          "totalShortage": 0,
+          "avgSOC": 93.44839814868686,
+          "minSOC": 4.018810740752266,
+          "maxSOC": 100,
+          "windGeneration": 182661.98319157024,
+          "solarGeneration": 178683.87725445387,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.7800414317483266,
+            "solar": 0.76305329115872,
+            "bio": 0.15770710529309917,
+            "total": 1.7008018282001458
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670833248
+      },
+      {
+        "id": "opt-53-92136",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 186745,
+              "unitCapacity": 0.43,
+              "totalCapacity": 80300.35,
+              "unitPrice": 0.082,
+              "totalPrice": 15313.09
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 58,
+              "unitCapacity": 1250,
+              "totalCapacity": 72500,
+              "unitPrice": 42,
+              "totalPrice": 2436
+            },
+            {
+              "model": "INV-500K",
+              "manufacturer": "特变电工",
+              "count": 2,
+              "unitCapacity": 500,
+              "totalCapacity": 1000,
+              "unitPrice": 18,
+              "totalPrice": 36
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 100350.59,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.80483532665526,
+          "shortageHours": 0,
+          "totalGeneration": 408204.87105608673,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 166567.32542982162,
+          "totalShortage": 0,
+          "avgSOC": 92.71366624732039,
+          "minSOC": 0.6292135493278435,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 142947.18369075822,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.6104429826188156,
+            "bio": 0.15770710529309917,
+            "total": 1.7432018775973244
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670879370
+      },
+      {
+        "id": "opt-53-82149",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 27,
+              "unitCapacity": 1500,
+              "totalCapacity": 40500,
+              "unitPrice": 520,
+              "totalPrice": 14040
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 308470,
+              "unitCapacity": 0.41,
+              "totalCapacity": 126472.7,
+              "unitPrice": 0.078,
+              "totalPrice": 24060.66
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 91,
+              "unitCapacity": 1250,
+              "totalCapacity": 113750,
+              "unitPrice": 42,
+              "totalPrice": 3822
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 102054.66,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.72791465435518,
+          "shortageHours": 0,
+          "totalGeneration": 399067.8848025454,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 158541.34868729571,
+          "totalShortage": 0,
+          "avgSOC": 92.51884786470052,
+          "minSOC": 4.778236442197331,
+          "maxSOC": 100,
+          "windGeneration": 136996.4873936777,
+          "solarGeneration": 225141.18903300178,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.5850310738112451,
+            "solar": 0.9614450274233535,
+            "bio": 0.15770710529309917,
+            "total": 1.7041832065276978
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670832748
+      },
+      {
+        "id": "opt-53-92336",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 45,
+              "unitCapacity": 1500,
+              "totalCapacity": 67500,
+              "unitPrice": 520,
+              "totalPrice": 23400
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 182076,
+              "unitCapacity": 0.43,
+              "totalCapacity": 78292.68,
+              "unitPrice": 0.082,
+              "totalPrice": 14930.232
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 56,
+              "unitCapacity": 1250,
+              "totalCapacity": 70000,
+              "unitPrice": 42,
+              "totalPrice": 2352
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 99889.73,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 40.25622113617857,
+          "shortageHours": 0,
+          "totalGeneration": 404630.9044135951,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 162889.11166605615,
+          "totalShortage": 0,
+          "avgSOC": 92.43721105469504,
+          "minSOC": 0.29022563283120434,
+          "maxSOC": 100,
+          "windGeneration": 228327.47898946312,
+          "solarGeneration": 139373.2170482664,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.9750517896854097,
+            "solar": 0.595180682231404,
+            "bio": 0.15770710529309917,
+            "total": 1.7279395772099129
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670880306
+      },
+      {
+        "id": "opt-53-82156",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 27,
+              "unitCapacity": 1500,
+              "totalCapacity": 40500,
+              "unitPrice": 520,
+              "totalPrice": 14040
+            }
+          ],
+          "solar": [
+            {
+              "model": "Hi-MO 5 410M",
+              "manufacturer": "隆基绿能",
+              "count": 308470,
+              "unitCapacity": 0.41,
+              "totalCapacity": 126472.7,
+              "unitPrice": 0.078,
+              "totalPrice": 24060.66
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20167,
+              "unitCapacity": 10.24,
+              "totalCapacity": 206510.08000000002,
+              "unitPrice": 2.5,
+              "totalPrice": 50417.5
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 91,
+              "unitCapacity": 1250,
+              "totalCapacity": 113750,
+              "unitPrice": 42,
+              "totalPrice": 3822
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 104,
+              "unitCapacity": 1000,
+              "totalCapacity": 104000,
+              "unitPrice": 72,
+              "totalPrice": 7488
+            }
+          ]
+        },
+        "totalCost": 101130.16,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.728390197289784,
+          "shortageHours": 0,
+          "totalGeneration": 399067.8848025454,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 158543.24642642614,
+          "totalShortage": 0,
+          "avgSOC": 92.3929295428906,
+          "minSOC": 3.168149598680166,
+          "maxSOC": 100,
+          "windGeneration": 136996.4873936777,
+          "solarGeneration": 225141.18903300178,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.5850310738112451,
+            "solar": 0.9614450274233535,
+            "bio": 0.15770710529309917,
+            "total": 1.7041832065276978
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670832782
+      },
+      {
+        "id": "opt-53-91749",
+        "regionId": 53,
+        "regionName": "测试区-1",
+        "regionType": "居民区",
+        "config": {
+          "wind": [
+            {
+              "model": "GW87/1500",
+              "manufacturer": "金风科技",
+              "count": 27,
+              "unitCapacity": 1500,
+              "totalCapacity": 40500,
+              "unitPrice": 520,
+              "totalPrice": 14040
+            }
+          ],
+          "solar": [
+            {
+              "model": "Vertex S 430M",
+              "manufacturer": "天合光能",
+              "count": 294123,
+              "unitCapacity": 0.43,
+              "totalCapacity": 126472.89,
+              "unitPrice": 0.082,
+              "totalPrice": 24118.086
+            }
+          ],
+          "biomass": {
+            "route": "沼气",
+            "primary": {
+              "model": "",
+              "manufacturer": "",
+              "count": 0,
+              "unitCapacity": 0,
+              "totalCapacity": 0,
+              "unitPrice": 0,
+              "totalPrice": 0
+            },
+            "secondary": {
+              "model": "BG-500",
+              "manufacturer": "颜巴赫",
+              "count": 9,
+              "unitCapacity": 500,
+              "totalCapacity": 4500,
+              "unitPrice": 140,
+              "totalPrice": 1260
+            }
+          },
+          "battery": [
+            {
+              "model": "BAT-200L",
+              "manufacturer": "比亚迪",
+              "count": 20508,
+              "unitCapacity": 10.24,
+              "totalCapacity": 210001.92,
+              "unitPrice": 2.5,
+              "totalPrice": 51270
+            }
+          ],
+          "inverter": [
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 91,
+              "unitCapacity": 1250,
+              "totalCapacity": 113750,
+              "unitPrice": 42,
+              "totalPrice": 3822
+            },
+            {
+              "model": "INV-1250K",
+              "manufacturer": "阳光电源",
+              "count": 1,
+              "unitCapacity": 1250,
+              "totalCapacity": 1250,
+              "unitPrice": 42,
+              "totalPrice": 42
+            }
+          ],
+          "pcs": [
+            {
+              "model": "PCS-1000",
+              "manufacturer": "阳光电源",
+              "count": 105,
+              "unitCapacity": 1000,
+              "totalCapacity": 105000,
+              "unitPrice": 72,
+              "totalPrice": 7560
+            }
+          ]
+        },
+        "totalCost": 102112.09,
+        "simResult": {
+          "feasible": true,
+          "reliability": 100,
+          "curtailmentRate": 39.72796643394689,
+          "shortageHours": 0,
+          "totalGeneration": 399068.22303226334,
+          "totalLoad": 234169.5912000024,
+          "totalCurtailment": 158541.6896948059,
+          "totalShortage": 0,
+          "avgSOC": 92.51885534455114,
+          "minSOC": 4.778455241226123,
+          "maxSOC": 100,
+          "windGeneration": 136996.4873936777,
+          "solarGeneration": 225141.5272627215,
+          "biomassGeneration": 36930.20837582077,
+          "energyRatio": {
+            "wind": 0.5850310738112451,
+            "solar": 0.961446471802694,
+            "bio": 0.15770710529309917,
+            "total": 1.7041846509070384
+          },
+          "constraintViolations": []
+        },
+        "timestamp": 1767670877552
+      }
+    ]
+  }
+}

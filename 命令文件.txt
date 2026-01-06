@@ -1,0 +1,9 @@
+启动命令
+
+
+
+cd energy-system
+npm run dev
+
+
+http://localhost:5173/
