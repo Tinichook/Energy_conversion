@@ -312,8 +312,8 @@ export default function EnergyCourseDesignApp() {
   const [showDesignScheme, setShowDesignScheme] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>('dark');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [designParams, setDesignParams] = useState<EquipmentConfig>({
+  // 设计参数（保留用于未来功能扩展）
+  const [_designParams, _setDesignParams] = useState<EquipmentConfig>({
     windTurbineCount: 10, windTurbinePower: 100, solarPanelCount: 500, 
     solarPanelPower: 300, biomassGeneratorPower: 50, batteryCapacity: 2000, inverterPower: 500
   });
