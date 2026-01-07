@@ -38,4 +38,19 @@ export default defineConfig({
       }
     }
   ],
+  // 支持 Web Workers
+  worker: {
+    format: 'es'
+  },
+  // 优化构建
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'optimization-worker': ['./src/optimizationWorker.ts']
+        }
+      }
+    }
+  }
 })

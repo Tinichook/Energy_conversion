@@ -6,13 +6,16 @@ import {
   Download, X,
   Factory, Trees, Wheat, Home, Mountain,
   UserCheck, Shield, Package, BarChart3, FileText,
-  Sun, Moon, DollarSign, Wind
+  Sun, Moon, DollarSign, Wind, Play
 } from 'lucide-react';
 import { validateStudent } from './students';
 import AdminPanel, { loadConfigFromStorage } from './AdminPanel';
 import EquipmentPanel from './EquipmentPanel';
 import DataVerificationPanel from './DataVerificationPanel';
 import DesignSchemePanel from './DesignSchemePanel';
+import OptimizationPanel from './OptimizationPanel';
+import { workerManager } from './WorkerManager';
+import { pageVisibilityManager } from './PageVisibilityManager';
 import { 
   generateCities as generateCitiesFromConfig, 
   getResourceData as getResourceDataFromConfig,
@@ -310,6 +313,7 @@ export default function EnergyCourseDesignApp() {
   const [showEquipmentPanel, setShowEquipmentPanel] = useState(false);
   const [showDataVerification, setShowDataVerification] = useState(false);
   const [showDesignScheme, setShowDesignScheme] = useState(false);
+  const [showOptimizationPanel, setShowOptimizationPanel] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>('dark');
 
   // 设计参数（保留用于未来功能扩展）
@@ -771,6 +775,13 @@ export default function EnergyCourseDesignApp() {
             >
               <Package className="w-4 h-4" /> 设备库
             </button>
+            
+            <button 
+              onClick={() => setShowOptimizationPanel(true)}
+              className="px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all bg-green-600 text-white shadow-lg hover:bg-green-500"
+            >
+              <Play className="w-4 h-4" /> 优化求解
+            </button>
             {[
               { id: 'resource', icon: Activity, label: '资源概览', color: 'bg-blue-600' },
               { id: 'transport_bio', icon: Truck, label: '生物质路网', color: 'bg-green-600' },
@@ -1152,6 +1163,15 @@ export default function EnergyCourseDesignApp() {
 
       {showDesignScheme && (
         <DesignSchemePanel onClose={() => setShowDesignScheme(false)} theme={theme} />
+      )}
+
+      {showOptimizationPanel && (
+        <OptimizationPanel 
+          isOpen={showOptimizationPanel}
+          onClose={() => setShowOptimizationPanel(false)}
+          selectedCity={viewingCity}
+          theme={theme}
+        />
       )}
     </div>
   );
