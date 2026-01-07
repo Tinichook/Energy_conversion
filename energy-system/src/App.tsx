@@ -14,8 +14,6 @@ import EquipmentPanel from './EquipmentPanel';
 import DataVerificationPanel from './DataVerificationPanel';
 import DesignSchemePanel from './DesignSchemePanel';
 import OptimizationPanel from './OptimizationPanel';
-import { workerManager } from './WorkerManager';
-import { pageVisibilityManager } from './PageVisibilityManager';
 import { 
   generateCities as generateCitiesFromConfig, 
   getResourceData as getResourceDataFromConfig,
