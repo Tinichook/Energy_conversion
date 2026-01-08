@@ -1160,12 +1160,12 @@ function ScoreCard({ solution, theme = 'dark' }: { solution: Solution; theme?: '
         </div>
       </div>
 
-      {/* 分项评分 */}
+      {/* 分项评分 - 根据说明报告最新.md评分体系 */}
       <div className="space-y-2">
         <ScoreBar label="工况满足" score={score.reliability || 0} max={30} color="blue" theme={theme} />
         <ScoreBar label="设备匹配" score={score.matching || 0} max={20} color="green" theme={theme} />
         <ScoreBar label="经济性" score={score.economics || 0} max={30} color="yellow" theme={theme} />
-        <ScoreBar label="稳定性" score={score.stability || 0} max={10} color="purple" theme={theme} />
+        <ScoreBar label="稳定性" score={score.stability || 0} max={20} color="purple" theme={theme} />
         <ScoreBar label="小组加分" score={score.groupBonus || 0} max={10} color="pink" theme={theme} />
       </div>
 

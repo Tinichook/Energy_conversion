@@ -766,10 +766,10 @@ const DesignSchemePanel: React.FC<DesignSchemePanelProps> = ({ onClose, theme = 
         <FormulaLine indent={1}><Var>S</Var><Sub>rel</Sub>: 工况满足评分 (0~30分)，衡量供电可靠性</FormulaLine>
         <FormulaLine indent={1}><Var>S</Var><Sub>match</Sub>: 设备匹配评分 (0~20分)，衡量设备选型合理性</FormulaLine>
         <FormulaLine indent={1}><Var>S</Var><Sub>econ</Sub>: 经济性评分 (0~30分)，衡量投资成本</FormulaLine>
-        <FormulaLine indent={1}><Var>S</Var><Sub>stab</Sub>: 稳定性评分 (0~10分)，衡量弃电率</FormulaLine>
+        <FormulaLine indent={1}><Var>S</Var><Sub>stab</Sub>: 稳定性评分 (0~20分)，衡量系统稳定性</FormulaLine>
         <FormulaLine indent={1}><Var>S</Var><Sub>group</Sub>: 小组加分 (0~10分)，衡量小组协同效果</FormulaLine>
         <FormulaLine>&nbsp;</FormulaLine>
-        <FormulaLine>满分 = 30 + 20 + 30 + 10 + 10 = 100分</FormulaLine>
+        <FormulaLine>满分 = 30 + 20 + 30 + 20 = 100分 (不含小组加分)</FormulaLine>
       </Formula>
 
       <h4 className={`${textPrimary} font-medium mb-2 mt-4`}>各项评分标准</h4>
@@ -821,18 +821,20 @@ const DesignSchemePanel: React.FC<DesignSchemePanelProps> = ({ onClose, theme = 
           </Formula>
         </div>
         <div className={`${bgCard} border ${borderColor} rounded-lg p-3`}>
-          <div className={`font-medium ${textPrimary} mb-2`}>4. 稳定性评分 <Var>S</Var><Sub>stab</Sub> (10分)</div>
+          <div className={`font-medium ${textPrimary} mb-2`}>4. 稳定性评分 <Var>S</Var><Sub>stab</Sub> (20分)</div>
           <Formula theme={theme}>
-            <FormulaLine><Var>S</Var><Sub>stab</Sub> = f(<Var>CurtailRate</Var>)</FormulaLine>
+            <FormulaLine><Var>S</Var><Sub>stab</Sub> = <Var>S</Var><Sub>reserve</Sub> + <Var>S</Var><Sub>ESS</Sub> + <Var>S</Var><Sub>coverage</Sub></FormulaLine>
             <FormulaLine>&nbsp;</FormulaLine>
-            <FormulaLine>其中 <Var>CurtailRate</Var> 为弃电率（见上方公式定义）</FormulaLine>
-            <FormulaLine>&nbsp;</FormulaLine>
-            <FormulaLine>评分规则:</FormulaLine>
-            <FormulaLine indent={1}><Var>CurtailRate</Var> &lt; 5%: 10分（优秀）</FormulaLine>
-            <FormulaLine indent={1}><Var>CurtailRate</Var> &lt; 10%: 8分（良好）</FormulaLine>
-            <FormulaLine indent={1}><Var>CurtailRate</Var> &lt; 15%: 6分（合格）</FormulaLine>
-            <FormulaLine indent={1}><Var>CurtailRate</Var> &lt; 20%: 4分（基本合格）</FormulaLine>
-            <FormulaLine indent={1}><Var>CurtailRate</Var> ≥ 20%: 2分（需优化）</FormulaLine>
+            <FormulaLine>各项说明 (公式4.16-4.21):</FormulaLine>
+            <FormulaLine indent={1}><Var>S</Var><Sub>reserve</Sub>: 备用容量评分 (0~8分)</FormulaLine>
+            <FormulaLine indent={2}>R<Sub>cap</Sub> = (P<Sub>installed</Sub> - P<Sub>rated,max</Sub>) / P<Sub>rated,max</Sub></FormulaLine>
+            <FormulaLine indent={2}>最优范围: 0.15 ≤ R<Sub>cap</Sub> ≤ 0.25</FormulaLine>
+            <FormulaLine indent={1}><Var>S</Var><Sub>ESS</Sub>: 储能调节评分 (0~7分)</FormulaLine>
+            <FormulaLine indent={2}>η<Sub>esi</Sub> = E<Sub>discharge,annual</Sub> / (E<Sub>ess</Sub> × 365)</FormulaLine>
+            <FormulaLine indent={2}>最优范围: 0.6 ≤ η<Sub>esi</Sub> ≤ 0.8</FormulaLine>
+            <FormulaLine indent={1}><Var>S</Var><Sub>coverage</Sub>: 能源差异性评分 (0~5分)</FormulaLine>
+            <FormulaLine indent={2}>σ<Sub>energy</Sub> = √(Σ(k<Sub>i</Sub> - k̄)²/3)</FormulaLine>
+            <FormulaLine indent={2}>S<Sub>coverage</Sub> = 5 × (1 - σ<Sub>energy</Sub>/0.3)</FormulaLine>
           </Formula>
         </div>
         <div className={`${bgCard} border ${borderColor} rounded-lg p-3`}>
