@@ -168,12 +168,32 @@ const PV_DERATING_FACTOR = 0.95;  // f_PV
 // 标准测试条件光照强度 (公式3.15)
 const G_STC = 1.0;  // kW/m²
 
-// 生物质发电效率 (公式3.17) - 分设备效率
+// 生物质发电效率参数
 const GENERATION_EFFICIENCY = {
   biomass: {
-    '直燃': { boiler: 0.80, engine: 0.30, gen: 0.96 },  // 锅炉、汽轮机、发电机效率
-    '气化': { boiler: 0.75, engine: 0.25, gen: 0.95 },
-    '沼气': { boiler: 0.85, engine: 0.35, gen: 0.97 },
+    // 直燃路线：生物质 → 锅炉(蒸汽) → 汽轮机 → 发电机
+    '直燃': { 
+      boiler: 0.80,   // 锅炉效率 η_boiler
+      engine: 0.30,   // 汽轮机效率 η_turbine
+      gen: 0.96       // 发电机效率 η_gen
+    },
+    // 气化路线：生物质 → 气化炉(燃气) → 燃气发电机
+    '气化': { 
+      gasificationEff: 0.70,    // 气化效率 η_gasification (冷煤气效率)
+      gasHeatValue: 5.5,        // 燃气热值 Q_gas (MJ/Nm³)，生物质气化气典型值4-6 MJ/Nm³
+      gasYield: 2.0,            // 产气率 (Nm³/kg生物质)
+      engineEff: 0.32,          // 燃气发电机效率 η_engine
+      gen: 0.95                 // 发电机效率 η_gen
+    },
+    // 沼气路线：生物质 → 厌氧发酵(沼气) → 沼气发电机
+    '沼气': { 
+      fermentationEff: 0.60,    // 发酵转化效率 (VS转化率)
+      biogasYield: 0.35,        // 产气率 (Nm³沼气/kg VS)，典型值0.3-0.5
+      vsContent: 0.80,          // 挥发性固体含量 VS/TS
+      biogasHeatValue: 21.5,    // 沼气热值 Q_biogas (MJ/Nm³)，甲烷含量55-65%时约20-23
+      engineEff: 0.38,          // 沼气发电机效率 η_engine
+      gen: 0.97                 // 发电机效率 η_gen
+    },
   },
   battery: 0.92,  // 充放电效率
 };
@@ -367,25 +387,100 @@ function calculateSolarPowerByFormula(
 }
 
 // ============================================
-// 生物质发电功率计算 - 公式3.17
-// P_bio = (B × Q_net,ar × η_boiler × η_engine × η_gen) / 3600
+// 生物质发电功率计算 - 分路线计算
 // ============================================
+
+/**
+ * 直燃路线功率计算 (公式3.17)
+ * P_direct = (B × Q_net,ar × η_boiler × η_turbine × η_gen) / 3600
+ * 
+ * @param B 燃料消耗量 kg/h
+ * @param heatValue 生物质热值 MJ/kg
+ * @returns 发电功率 kW
+ */
+function calculateDirectCombustionPower(B: number, heatValue: number): number {
+  const eff = GENERATION_EFFICIENCY.biomass['直燃'];
+  // P = (B × Q × η_boiler × η_turbine × η_gen) / 3600
+  // B: kg/h, Q: MJ/kg -> kJ/kg (*1000), 结果: kW
+  return (B * heatValue * 1000 * eff.boiler * eff.engine * eff.gen) / 3600;
+}
+
+/**
+ * 气化路线功率计算
+ * 步骤：生物质 → 气化炉(产燃气) → 燃气发电机 → 电力
+ * 
+ * P_gas = (B × Y_gas × Q_gas × η_engine × η_gen) / 3600
+ * 
+ * @param B 燃料消耗量 kg/h
+ * @param heatValue 生物质热值 MJ/kg (用于参考，实际用燃气热值)
+ * @returns 发电功率 kW
+ */
+function calculateGasificationPower(B: number, heatValue: number): number {
+  const eff = GENERATION_EFFICIENCY.biomass['气化'];
+  // Y_gas: 产气率 Nm³/kg
+  // Q_gas: 燃气热值 MJ/Nm³
+  // 燃气产量 V_gas = B × Y_gas (Nm³/h)
+  const V_gas = B * eff.gasYield;
+  // P = (V_gas × Q_gas × η_engine × η_gen) / 3.6
+  // V_gas: Nm³/h, Q_gas: MJ/Nm³, 结果: kW
+  return (V_gas * eff.gasHeatValue * eff.engineEff * eff.gen) / 3.6;
+}
+
+/**
+ * 沼气路线功率计算
+ * 步骤：生物质 → 厌氧发酵(产沼气) → 沼气发电机 → 电力
+ * 
+ * P_biogas = (B × VS% × η_ferm × Y_biogas × Q_biogas × η_engine × η_gen) / 3600
+ * 
+ * @param B 燃料消耗量 kg/h (干物质)
+ * @param heatValue 生物质热值 MJ/kg (用于参考)
+ * @param moisture 含水率 (用于计算干物质)
+ * @returns 发电功率 kW
+ */
+function calculateBiogasPower(B: number, heatValue: number, moisture: number = 0.5): number {
+  const eff = GENERATION_EFFICIENCY.biomass['沼气'];
+  // 干物质量 = B × (1 - 含水率)
+  const dryMatter = B * (1 - moisture);
+  // 挥发性固体量 VS = 干物质 × VS含量
+  const VS = dryMatter * eff.vsContent;
+  // 沼气产量 V_biogas = VS × η_ferm × Y_biogas (Nm³/h)
+  const V_biogas = VS * eff.fermentationEff * eff.biogasYield;
+  // P = (V_biogas × Q_biogas × η_engine × η_gen) / 3.6
+  // V_biogas: Nm³/h, Q_biogas: MJ/Nm³, 结果: kW
+  return (V_biogas * eff.biogasHeatValue * eff.engineEff * eff.gen) / 3.6;
+}
+
+/**
+ * 生物质发电功率计算 - 根据路线选择对应公式
+ */
 function calculateBiomassPowerByFormula(
   biomassConfig: BiomassEquipmentSelection,
   availableBiomass: number,  // 吨/天
-  heatValue: number          // MJ/kg
+  heatValue: number,         // MJ/kg
+  moisture: number = 0.5     // 含水率
 ): number {
   if (!biomassConfig.secondary.model) return 0;
   
   const route = biomassConfig.route;
-  const eff = GENERATION_EFFICIENCY.biomass[route];
   
   // B: 燃料消耗量 kg/h = 日产量(t) × 1000(kg/t) / 24(h)
   const B = availableBiomass * 1000 / 24;
   
-  // 公式3.17: P_bio = (B × Q_net,ar × η_boiler × η_engine × η_gen) / 3600
-  // Q_net,ar 单位是 MJ/kg，需要转换为 kJ/kg
-  const P_bio = (B * heatValue * 1000 * eff.boiler * eff.engine * eff.gen) / 3600;
+  let P_bio: number;
+  
+  switch (route) {
+    case '直燃':
+      P_bio = calculateDirectCombustionPower(B, heatValue);
+      break;
+    case '气化':
+      P_bio = calculateGasificationPower(B, heatValue);
+      break;
+    case '沼气':
+      P_bio = calculateBiogasPower(B, heatValue, moisture);
+      break;
+    default:
+      P_bio = calculateDirectCombustionPower(B, heatValue);
+  }
   
   // 不超过设备额定功率
   const ratedPower = biomassConfig.secondary.totalCapacity / 1000;  // kW -> MW
@@ -393,17 +488,35 @@ function calculateBiomassPowerByFormula(
   return Math.min(P_bio / 1000, ratedPower);  // kW -> MW
 }
 
+/**
+ * 计算区域最大生物质发电功率
+ */
 export function calculateMaxBiomassPower(region: City, route: BiomassRoute): number {
   const params = getRegionParams(region);
   if (!params) return 1;
   
   const dailyBiomass = params.dailyBiomass;
-  // 使用公式3.16计算热值
   const heatValue = calculateBiomassHeatValue(region.biomassComp);
-  const eff = GENERATION_EFFICIENCY.biomass[route];
+  const moisture = region.biomassComp.Moisture / 100;
   
+  // B: 燃料消耗量 kg/h
   const B = dailyBiomass * 1000 / 24;
-  const P_bio = (B * heatValue * 1000 * eff.boiler * eff.engine * eff.gen) / 3600;
+  
+  let P_bio: number;
+  
+  switch (route) {
+    case '直燃':
+      P_bio = calculateDirectCombustionPower(B, heatValue);
+      break;
+    case '气化':
+      P_bio = calculateGasificationPower(B, heatValue);
+      break;
+    case '沼气':
+      P_bio = calculateBiogasPower(B, heatValue, moisture);
+      break;
+    default:
+      P_bio = calculateDirectCombustionPower(B, heatValue);
+  }
   
   return P_bio / 1000;  // kW -> MW
 }
@@ -1117,15 +1230,16 @@ function calculateSolarPower(
 }
 
 /**
- * 计算生物质发电功率 - 使用公式3.17
+ * 计算生物质发电功率 - 根据路线使用对应公式
  */
 function calculateBiomassPower(
   biomassConfig: BiomassEquipmentSelection,
   availableBiomass: number,
-  heatValue: number
+  heatValue: number,
+  moisture: number = 0.5
 ): number {
-  // 使用公式3.17计算功率
-  return calculateBiomassPowerByFormula(biomassConfig, availableBiomass, heatValue);
+  // 根据路线使用对应公式计算功率
+  return calculateBiomassPowerByFormula(biomassConfig, availableBiomass, heatValue, moisture);
 }
 
 /**
@@ -1162,6 +1276,8 @@ function simulateLightweight(
   const dailyBiomass = calculateDailyBiomass(region);
   // 使用公式3.16计算热值
   const heatValue = calculateBiomassHeatValue(region.biomassComp);
+  // 获取含水率用于沼气路线计算
+  const moisture = region.biomassComp.Moisture / 100;
   
   let totalGeneration = 0;
   let totalLoad = 0;
@@ -1187,7 +1303,7 @@ function simulateLightweight(
         // 获取温度数据用于光伏计算
         const temperature = resourceData.temperature?.[hour] ?? 25;
         const solarPower = calculateSolarPower(resourceData.solar[hour] || 0, temperature, config.solar);
-        const biomassPower = calculateBiomassPower(config.biomass, dailyBiomass, heatValue);
+        const biomassPower = calculateBiomassPower(config.biomass, dailyBiomass, heatValue, moisture);
         const totalGen = windPower + solarPower + biomassPower;
         
         windGeneration += windPower;
@@ -1283,6 +1399,8 @@ export function simulate8760Hours(
   const dailyBiomass = calculateDailyBiomass(region);
   // 使用公式3.16计算热值
   const heatValue = calculateBiomassHeatValue(region.biomassComp);
+  // 获取含水率用于沼气路线计算
+  const moisture = region.biomassComp.Moisture / 100;
   
   let totalGeneration = 0;
   let totalLoad = 0;
@@ -1309,8 +1427,8 @@ export function simulate8760Hours(
         // 使用公式3.15计算光伏功率
         const temperature = resourceData.temperature?.[hour] ?? 25;
         const solarPower = calculateSolarPower(resourceData.solar[hour] || 0, temperature, config.solar);
-        // 使用公式3.17计算生物质功率
-        const biomassPower = calculateBiomassPower(config.biomass, dailyBiomass, heatValue);
+        // 根据路线使用对应公式计算生物质功率
+        const biomassPower = calculateBiomassPower(config.biomass, dailyBiomass, heatValue, moisture);
         const totalGen = windPower + solarPower + biomassPower;
         
         windGeneration += windPower;
