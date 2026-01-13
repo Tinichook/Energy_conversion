@@ -415,7 +415,7 @@ function calculateDirectCombustionPower(B: number, heatValue: number): number {
  * @param heatValue 生物质热值 MJ/kg (用于参考，实际用燃气热值)
  * @returns 发电功率 kW
  */
-function calculateGasificationPower(B: number, heatValue: number): number {
+function calculateGasificationPower(B: number, _heatValue: number): number {
   const eff = GENERATION_EFFICIENCY.biomass['气化'];
   // Y_gas: 产气率 Nm³/kg
   // Q_gas: 燃气热值 MJ/Nm³
@@ -437,7 +437,7 @@ function calculateGasificationPower(B: number, heatValue: number): number {
  * @param moisture 含水率 (用于计算干物质)
  * @returns 发电功率 kW
  */
-function calculateBiogasPower(B: number, heatValue: number, moisture: number = 0.5): number {
+function calculateBiogasPower(B: number, _heatValue: number, moisture: number = 0.5): number {
   const eff = GENERATION_EFFICIENCY.biomass['沼气'];
   // 干物质量 = B × (1 - 含水率)
   const dryMatter = B * (1 - moisture);
