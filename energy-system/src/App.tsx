@@ -8,7 +8,7 @@ import {
   UserCheck, Shield, Package, BarChart3, FileText,
   Sun, Moon, DollarSign, Wind, Play
 } from 'lucide-react';
-import { validateStudent } from './students';
+import { validateStudent, getStudentRegion } from './students';
 import AdminPanel, { loadConfigFromStorage } from './AdminPanel';
 import EquipmentPanel from './EquipmentPanel';
 import DataVerificationPanel from './DataVerificationPanel';
@@ -376,12 +376,13 @@ export default function EnergyCourseDesignApp() {
     setIsAdmin(false);
     // 设置当前学号，用于生成个性化的区域数据（5-10%波动）
     setCurrentStudentId(studentId);
-    const num = parseInt(studentId.replace(/\D/g, '').slice(-4) || '1');
-    const targetCityId = (num % 52) + 1;
+    // 使用固定的学生-区域映射表，确保每个学生分配唯一区域
+    const targetCityId = getStudentRegion(studentId);
     setAssignedCityId(targetCityId);
     setViewingCityId(targetCityId);
     setIsLoggedIn(true);
-    const city = cities[targetCityId - 1];
+    // 使用find而不是索引访问，确保找到正确的区域
+    const city = cities.find(c => c.id === targetCityId);
     if (city) {
         setTransform({ x: 400 - city.x * 0.5, y: 300 - city.y * 0.5, scale: 0.5 });
     }
