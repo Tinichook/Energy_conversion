@@ -44,13 +44,6 @@ export default defineConfig({
   },
   // 优化构建
   build: {
-    target: 'esnext',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'optimization-worker': ['./src/optimizationWorker.ts']
-        }
-      }
-    }
+    target: 'esnext'
   }
 })
