@@ -94,39 +94,119 @@ const downloadAllEquipmentExcel = () => {
       )
     },
     {
-      name: '生物质-直燃锅炉',
-      data: generateSheetData(DIRECT_COMBUSTION_BOILERS,
-        ['型号', '制造商', '蒸汽产量(t/h)', '蒸汽压力(MPa)', '蒸汽温度(°C)', '热效率(%)', '燃料类型', '燃料消耗(kg/h)', '价格(万元)'],
-        ['model', 'manufacturer', 'steamCapacity', 'steamPressure', 'steamTemp', 'efficiency', 'fuelType', 'fuelConsumption', 'price']
-      )
-    },
-    {
-      name: '生物质-气化炉',
-      data: generateSheetData(GASIFIERS,
-        ['型号', '制造商', '燃气产量(Nm³/h)', '燃气热值(MJ/Nm³)', '气化效率(%)', '燃料类型', '燃料消耗(kg/h)', '价格(万元)'],
-        ['model', 'manufacturer', 'gasOutput', 'gasHeatValue', 'efficiency', 'fuelType', 'fuelConsumption', 'price']
-      )
-    },
-    {
-      name: '生物质-厌氧发酵罐',
-      data: generateSheetData(ANAEROBIC_DIGESTERS,
-        ['型号', '制造商', '有效容积(m³)', '日产气量(Nm³/d)', '沼气甲烷含量(%)', '发酵温度(°C)', '停留时间(天)', '价格(万元)'],
-        ['model', 'manufacturer', 'volume', 'dailyGasOutput', 'methaneContent', 'temperature', 'retentionTime', 'price']
-      )
-    },
-    {
-      name: '生物质-燃气沼气发电机',
-      data: generateSheetData(GAS_ENGINES,
-        ['型号', '制造商', '额定功率(kW)', '燃料类型', '燃料消耗(Nm³/h)', '发电效率(%)', '热电比', '输出电压(V)', '频率(Hz)', '价格(万元)'],
-        ['model', 'manufacturer', 'ratedPower', 'fuelType', 'fuelConsumption', 'efficiency', 'heatPowerRatio', 'outputVoltage', 'frequency', 'price']
-      )
-    },
-    {
-      name: '生物质-汽轮发电机组',
-      data: generateSheetData(STEAM_TURBINES,
-        ['型号', '制造商', '额定功率(MW)', '进汽压力(MPa)', '进汽温度(°C)', '排汽压力(kPa)', '蒸汽消耗(t/h)', '发电效率(%)', '输出电压(kV)', '频率(Hz)', '价格(万元)'],
-        ['model', 'manufacturer', 'ratedPower', 'inletPressure', 'inletTemp', 'exhaustPressure', 'steamConsumption', 'efficiency', 'outputVoltage', 'frequency', 'price']
-      )
+      name: '生物质设备',
+      data: (() => {
+        // 合并所有生物质设备到一个sheet
+        const biomassData: (string | number)[][] = [];
+        
+        // 添加表头
+        biomassData.push([
+          '设备类型', '型号', '制造商', '类型/燃料', 
+          '额定功率/容量', '单位', '效率(%)', 
+          '进汽压力(MPa)', '进汽温度(°C)', '蒸汽消耗(kg/kWh)',
+          '处理能力(kg/h)', '产气量(Nm³/h)', '燃气热值(MJ/Nm³)', '气化温度(°C)',
+          '有效容积(m³)', '日处理量(t/d)', '日产气量(Nm³/d)', '甲烷含量(%)', '发酵温度(°C)', '停留时间(天)',
+          '燃气消耗(Nm³/h)', '发电效率(%)', '热效率(%)', '热电联产效率(%)',
+          '输出电压', '频率(Hz)', '功率因数',
+          '额定转速(rpm)', '冷却方式', '启动方式', '噪音(dB)',
+          '长(mm/m)', '宽(mm/m)', '高(mm/m)', '重量(kg)',
+          '适用燃料/原料', '最大含水率(%)', '最大粒径(mm)',
+          '烟尘排放(mg/Nm³)', 'SO₂排放(mg/Nm³)', 'NOx排放(mg/Nm³)',
+          '价格(万元)', '燃料处理成本(元/吨)'
+        ]);
+        
+        // 添加直燃锅炉数据
+        DIRECT_COMBUSTION_BOILERS.forEach(item => {
+          biomassData.push([
+            '直燃锅炉', item.model, item.manufacturer, item.type,
+            item.steamCapacity, 't/h', item.efficiency,
+            item.steamPressure, item.steamTemp, '',
+            '', '', '', '',
+            '', '', '', '', '', '',
+            item.fuelConsumption * 1000, '', '', '',
+            '', '', '',
+            '', '', '', '',
+            item.length, item.width, item.height, '',
+            item.suitableFuels.join(';'), item.fuelMoistureMax, '',
+            item.dustEmission, item.SO2Emission, item.NOxEmission,
+            item.price, item.processingCost
+          ]);
+        });
+        
+        // 添加汽轮发电机组数据
+        STEAM_TURBINES.forEach(item => {
+          biomassData.push([
+            '汽轮发电机组', item.model, item.manufacturer, '',
+            item.ratedPower, 'MW', item.efficiency,
+            item.inletPressure, item.inletTemp, item.steamConsumption,
+            '', '', '', '',
+            '', '', '', '', '', '',
+            '', '', '', '',
+            item.outputVoltage, item.frequency, item.powerFactor,
+            item.ratedSpeed, item.coolingType, '', '',
+            '', '', '', '',
+            '', '', '',
+            '', '', '',
+            item.price, ''
+          ]);
+        });
+        
+        // 添加气化炉数据
+        GASIFIERS.forEach(item => {
+          biomassData.push([
+            '气化炉', item.model, item.manufacturer, item.type,
+            item.feedCapacity, 'kg/h', item.efficiency,
+            '', '', '',
+            item.feedCapacity, item.gasOutput, item.gasHeatValue, item.gasificationTemp,
+            '', '', '', '', '', '',
+            '', '', '', '',
+            '', '', '',
+            '', '', '', '',
+            '', '', '', '',
+            item.suitableFuels.join(';'), item.fuelMoistureMax, item.fuelSizeMax,
+            '', '', '',
+            item.price, ''
+          ]);
+        });
+        
+        // 添加燃气/沼气发电机组数据
+        GAS_ENGINES.forEach(item => {
+          biomassData.push([
+            '燃气/沼气发电机', item.model, item.manufacturer, item.fuelType,
+            item.ratedPower, 'kW', '',
+            '', '', '',
+            '', '', '', '',
+            '', '', '', '', '', '',
+            item.gasConsumption, item.electricalEfficiency, item.thermalEfficiency, item.CHPEfficiency,
+            item.outputVoltage, item.frequency, item.powerFactor,
+            item.ratedSpeed, item.coolingType, item.startupType, item.noiseLevel,
+            item.length, item.width, item.height, item.weight,
+            '', '', '',
+            '', '', '',
+            item.price, ''
+          ]);
+        });
+        
+        // 添加厌氧发酵罐数据
+        ANAEROBIC_DIGESTERS.forEach(item => {
+          biomassData.push([
+            '厌氧发酵罐', item.model, item.manufacturer, item.fermentationType + '发酵',
+            item.effectiveVolume, 'm³', '',
+            '', '', '',
+            '', '', '', '',
+            item.effectiveVolume, item.dailyFeedCapacity, item.dailyGasOutput, item.methaneContent, item.fermentationTemp, item.retentionTime,
+            '', '', '', '',
+            '', '', '',
+            '', '', '', '',
+            item.diameter, '', item.height, '',
+            item.suitableFeedstocks.join(';'), '', '',
+            '', '', '',
+            item.price, ''
+          ]);
+        });
+        
+        return biomassData;
+      })()
     },
     {
       name: '储能电池',
@@ -379,7 +459,7 @@ export default function EquipmentPanel({ onClose, theme = 'dark' }: EquipmentPan
                 <Download className="w-4 h-4" />
                 <span className="text-sm font-medium">下载设备数据 (.xls)</span>
               </button>
-              <div className={`text-xs text-center mt-2 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>包含5个工作表</div>
+              <div className={`text-xs text-center mt-2 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>包含5个工作表（光伏/风机/生物质/储能/逆变器）</div>
             </div>
           </div>
 
