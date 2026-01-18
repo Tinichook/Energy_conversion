@@ -6,7 +6,7 @@ import {
   Download, X,
   Factory, Trees, Wheat, Home, Mountain,
   UserCheck, Shield, Package, BarChart3, FileText,
-  Sun, Moon, DollarSign, Wind, Play
+  Sun, Moon, DollarSign, Wind
 } from 'lucide-react';
 import { validateStudent, getStudentRegion } from './students';
 import AdminPanel, { loadConfigFromStorage } from './AdminPanel';
