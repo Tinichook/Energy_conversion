@@ -775,12 +775,6 @@ export default function EnergyCourseDesignApp() {
               <Package className="w-4 h-4" /> 设备库
             </button>
             
-            <button 
-              onClick={() => setShowOptimizationPanel(true)}
-              className="px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all bg-green-600 text-white shadow-lg hover:bg-green-500"
-            >
-              <Play className="w-4 h-4" /> 优化求解
-            </button>
             {[
               { id: 'resource', icon: Activity, label: '资源概览', color: 'bg-blue-600' },
               { id: 'transport_bio', icon: Truck, label: '生物质路网', color: 'bg-green-600' },

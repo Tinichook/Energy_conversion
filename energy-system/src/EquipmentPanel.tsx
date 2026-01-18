@@ -94,17 +94,38 @@ const downloadAllEquipmentExcel = () => {
       )
     },
     {
-      name: '生物质发电设备',
-      data: generateSheetData(
-        [
-          ...DIRECT_COMBUSTION_BOILERS.map(b => ({ ...b, category: '直燃锅炉' })),
-          ...GASIFIERS.map(g => ({ ...g, category: '气化炉' })),
-          ...ANAEROBIC_DIGESTERS.map(d => ({ ...d, category: '厌氧发酵罐' })),
-          ...GAS_ENGINES.map(e => ({ ...e, category: '燃气/沼气发电机' })),
-          ...STEAM_TURBINES.map(t => ({ ...t, category: '汽轮发电机组' }))
-        ],
-        ['分类', '型号', '制造商', '价格(万元)'],
-        ['category', 'model', 'manufacturer', 'price']
+      name: '生物质-直燃锅炉',
+      data: generateSheetData(DIRECT_COMBUSTION_BOILERS,
+        ['型号', '制造商', '蒸汽产量(t/h)', '蒸汽压力(MPa)', '蒸汽温度(°C)', '热效率(%)', '燃料类型', '燃料消耗(kg/h)', '价格(万元)'],
+        ['model', 'manufacturer', 'steamCapacity', 'steamPressure', 'steamTemp', 'efficiency', 'fuelType', 'fuelConsumption', 'price']
+      )
+    },
+    {
+      name: '生物质-气化炉',
+      data: generateSheetData(GASIFIERS,
+        ['型号', '制造商', '燃气产量(Nm³/h)', '燃气热值(MJ/Nm³)', '气化效率(%)', '燃料类型', '燃料消耗(kg/h)', '价格(万元)'],
+        ['model', 'manufacturer', 'gasOutput', 'gasHeatValue', 'efficiency', 'fuelType', 'fuelConsumption', 'price']
+      )
+    },
+    {
+      name: '生物质-厌氧发酵罐',
+      data: generateSheetData(ANAEROBIC_DIGESTERS,
+        ['型号', '制造商', '有效容积(m³)', '日产气量(Nm³/d)', '沼气甲烷含量(%)', '发酵温度(°C)', '停留时间(天)', '价格(万元)'],
+        ['model', 'manufacturer', 'volume', 'dailyGasOutput', 'methaneContent', 'temperature', 'retentionTime', 'price']
+      )
+    },
+    {
+      name: '生物质-燃气沼气发电机',
+      data: generateSheetData(GAS_ENGINES,
+        ['型号', '制造商', '额定功率(kW)', '燃料类型', '燃料消耗(Nm³/h)', '发电效率(%)', '热电比', '输出电压(V)', '频率(Hz)', '价格(万元)'],
+        ['model', 'manufacturer', 'ratedPower', 'fuelType', 'fuelConsumption', 'efficiency', 'heatPowerRatio', 'outputVoltage', 'frequency', 'price']
+      )
+    },
+    {
+      name: '生物质-汽轮发电机组',
+      data: generateSheetData(STEAM_TURBINES,
+        ['型号', '制造商', '额定功率(MW)', '进汽压力(MPa)', '进汽温度(°C)', '排汽压力(kPa)', '蒸汽消耗(t/h)', '发电效率(%)', '输出电压(kV)', '频率(Hz)', '价格(万元)'],
+        ['model', 'manufacturer', 'ratedPower', 'inletPressure', 'inletTemp', 'exhaustPressure', 'steamConsumption', 'efficiency', 'outputVoltage', 'frequency', 'price']
       )
     },
     {
